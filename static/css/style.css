@@ -1029,10 +1029,10 @@ strong {
     margin-bottom: 0;
 }
 
-/* ─── TIMELINE (Education) ─── */
+/* ─── TIMELINE (Education) ─── 
 .edu-timeline {
-    /* inherits from about section */
-}
+     inherits from about section 
+} */
 
 .timeline {
     display: flex;
