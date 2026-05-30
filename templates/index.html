@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anit Kumar Maity — AI/ML Engineer</title>
     <meta name="description"
-        content="MCA student specialising in Deep Learning, Computer Vision, and NLP. Python · PyTorch · FastAPI." />
+        content="MCA graduate with a strong background in Mathematics and a keen interest in AI & ML. Computer Vision · NLP · RAG · PyTorch." />
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -33,10 +33,6 @@
         </div>
     </div>
 
-    <!-- ▓▓▓ CURSOR ▓▓▓ -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
-
     <!-- ▓▓▓ NOISE ▓▓▓ -->
     <div class="noise"></div>
 
@@ -46,62 +42,85 @@
     <!-- ▓▓▓ CANVAS ▓▓▓ -->
     <canvas id="neural-canvas"></canvas>
 
-    <!-- ▓▓▓ NAV ▓▓▓ -->
+    <!-- ▓▓▓ NAV ▓▓▓
+       CHANGE 1: Logo now shows profile photo circle + brand + HOME label
+  ▓▓▓ -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a class="nav-logo" href="#home">
-                <span class="logo-bracket">[</span>AKM<span class="logo-bracket">]</span>
+                <!-- Place your photo at /static/img/profile.jpg -->
+                <div class="nav-logo-photo">
+                    <img src="/static/img/passport.jpg" alt="Anit Kumar Maity" />
+                    <span class="nav-logo-initials">AKM</span>
+                </div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-brand"><span class="logo-bracket">[</span>AKM<span
+                            class="logo-bracket">]</span></span>
+                </div>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">about</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#certifications">certs</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#certifications">CERTIFICATES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
             <button class="nav-burger" id="burger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            <a href="#about" class="mob-link">about</a>
-            <a href="#skills" class="mob-link">skills</a>
-            <a href="#projects" class="mob-link">projects</a>
-            <a href="#certifications" class="mob-link">certifications</a>
-            <a href="#contact" class="mob-link">contact</a>
+            <a href="#about" class="mob-link">ABOUT</a>
+            <a href="#skills" class="mob-link">SKILLS</a>
+            <a href="#projects" class="mob-link">PROJECTS</a>
+            <a href="#certifications" class="mob-link">CERTIFICATES</a>
+            <a href="#contact" class="mob-link">CONTACT</a>
         </div>
     </nav>
 
-    <!-- ▓▓▓ HERO ▓▓▓ -->
+    <!-- ▓▓▓ HERO ▓▓▓
+       CHANGE 2: Profile photo added above hero-name on the left column
+  ▓▓▓ -->
     <section class="hero" id="home">
         <div class="hero-orb hero-orb-1"></div>
         <div class="hero-orb hero-orb-2"></div>
         <div class="hero-grid-overlay"></div>
         <div class="hero-inner">
             <div class="hero-left">
+                <!-- Profile photo — medium circular, above name -->
+                <div class="hero-photo-wrap">
+                    <div class="hero-photo">
+                        <img src="/static/img/profile.jpeg" alt="Anit Kumar Maity" />
+                        <span class="hero-photo-initials">AKM</span>
+                    </div>
+                    <div class="hero-photo-ring"></div>
+                </div>
                 <p class="hero-tag"><span class="tag-dot"></span>Open to opportunities</p>
-                <h1 class="hero-name" id="hero-name">ANIT<br />KUMAR<br /><span class="name-accent">MAITY</span></h1>
+                <h2 class="hero-name" id="hero-name">ANIT KUMAR MAITY</h2>
                 <div class="hero-social">
-                    <a href="https://github.com/" target="_blank" class="hs-link">GH</a>
-                    <a href="https://linkedin.com/in/anit-kumar-maity-41308734a" target="_blank" class="hs-link">LI</a>
-                    <a href="mailto:anitkumarmaity1@gmail.com" class="hs-link">EM</a>
+                    <a href="https://github.com/YOUR_USERNAME" target="_blank" class="hs-link" title="GitHub">GH</a>
+                    <a href="https://linkedin.com/in/anit-kumar-maity-41308734a" target="_blank" class="hs-link"
+                        title="LinkedIn">LI</a>
+                    <a href="mailto:anitkumarmaity1@gmail.com" class="hs-link" title="Email">EM</a>
                 </div>
             </div>
             <div class="hero-right">
                 <div class="hero-role-wrap">
                     <p class="hero-role"><span id="typed-role"></span><span class="type-cursor">|</span></p>
-                    <p class="hero-sub"><em>Computer Vision · NLP · RAG</em></p>
+                    <p class="hero-sub"><em>Computer Vision · NLP · Generative AI · RAG</em></p>
                 </div>
-                <p class="hero-desc">MCA student at Pondicherry University with a Mathematics (Hons.) foundation.
-                    Building intelligent systems that see, understand, and reason.</p>
+                <p class="hero-desc">MCA post graduated with a Mathematics(UG) background and hands-on experience in
+                    Machine Learning, Deep Learning, Computer Vision, NLP, and Generative AI. Skilled in Python and AI
+                    frameworks such as PyTorch, TensorFlow, and Scikit-learn. Built projects in speech classification,
+                    remote sensing image analysis, and RAG-based applications. Interested in applying AI and data-driven
+                    solutions to solve real-world problems and grow as a Data Scientist, AI/ML Engineer, or Generative
+                    AI Engineer.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="mailto:anitkumarmaity1@gmail.com" class="btn btn-ghost">Get In Touch</a>
                 </div>
                 <div class="hero-meta">
-                    <span><span class="mono-label">loc//</span>Tamluk, West Bengal, India</span>
-                    <span><span class="mono-label">cgpa//</span>7.9 / 10</span>
-                    <span><span class="mono-label">status//</span><span class="status-live">available</span></span>
+                    <span><span class="mono-label">Address//</span>Tamluk, Perba Medinipur, West Bengal, India</span>
                 </div>
             </div>
         </div>
@@ -111,7 +130,9 @@
         </div>
     </section>
 
-    <!-- ▓▓▓ ABOUT ▓▓▓ -->
+    <!-- ▓▓▓ ABOUT ▓▓▓
+       CHANGE 3: Removed stat blocks on the right — about text now spans full width
+  ▓▓▓ -->
     <section class="section" id="about">
         <div class="sec-watermark">01</div>
         <div class="container">
@@ -119,68 +140,142 @@
                 <p class="section-index">01</p>
                 <h2 class="section-title">About</h2>
             </div>
-            <div class="about-grid">
-                <div class="about-text reveal-up">
-                    <p>I am an <strong>MCA student</strong> at Pondicherry University with a deep passion for machine
-                        learning research and applied AI. My journey started with a <strong>B.Sc. Mathematics
-                            (Hons.)</strong> from Vidyasagar University, which gave me the rigorous mathematical
-                        foundation I rely on daily.</p>
-                    <p>I specialise in <strong>Deep Learning, Computer Vision, and NLP</strong> — from training
-                        encoder-decoder segmentation networks on multispectral satellite imagery to deploying real-time
-                        accent classification systems on Hugging Face.</p>
-                    <p>Currently architecting a <strong>RAG-based Medical Chatbot</strong> using LangChain, FastAPI,
-                        FAISS, and PostgreSQL — bridging research and production engineering.</p>
-                </div>
-                <div class="about-stats reveal-up" style="--delay:0.12s">
-                    <div class="stat-card">
-                        <span class="stat-num"><span class="counter" data-target="97">0</span><span
-                                class="stat-pct">%</span></span>
-                        <span class="stat-label">Best Model Accuracy<br /><small>Accent Classification
-                                (2D-CNN)</small></span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num"><span class="counter" data-target="90.67" data-decimals="2">0</span><span
-                                class="stat-pct">%</span></span>
-                        <span class="stat-label">IoU Score<br /><small>Mineral Segmentation (UNet)</small></span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num"><span class="counter" data-target="1164">0</span></span>
-                        <span class="stat-label">Audio Samples<br /><small>Accent Dataset Processed</small></span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num"><span class="counter" data-target="9561">0</span><span
-                                class="stat-pct">km²</span></span>
-                        <span class="stat-label">Satellite Coverage<br /><small>Salem District, Landsat-8</small></span>
-                    </div>
-                </div>
+            <div class="about-text-full reveal-up">
+                <p>I am an <strong>MCA graduate</strong> from Pondicherry University with a deep passion for machine
+                    learning research and applied AI. My journey started with a <strong>B.Sc. Mathematics
+                        (Hons.)</strong>
+                    from Vidyasagar University, which gave me the rigorous mathematical foundation I rely on daily —
+                    linear
+                    algebra, calculus, statistics, and probability theory.</p>
+                <p>I specialise in <strong>Deep Learning, Computer Vision, and NLP</strong> — from training
+                    encoder-decoder
+                    segmentation networks on multispectral satellite imagery to deploying real-time accent
+                    classification
+                    systems on Hugging Face. I am passionate about applying AI to solve real-world problems and
+                    continuously
+                    learning new technologies.</p>
+                <p>Currently architecting a <strong>RAG-based Medical Chatbot</strong> using LangChain, FastAPI,
+                    FAISS, and PostgreSQL — bridging research and production engineering. I have hands-on experience
+                    with
+                    <strong>NumPy, Pandas, PyTorch, TensorFlow</strong>, and the full ML pipeline from data wrangling
+                    through
+                    model deployment.
+                </p>
             </div>
-            <div class="edu-timeline reveal-up" style="--delay:0.22s">
+
+            <!-- ▓▓▓ EDUCATION ▓▓▓
+           CHANGE 5: More information per entry, PDF result links, 2 extra education entries
+      ▓▓▓ -->
+            <div class="edu-timeline reveal-up" style="--delay:0.15s">
                 <h3 class="sub-title">Education</h3>
                 <div class="timeline">
+
+                    <!-- Entry 1: MCA -->
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
                             <span class="tl-date">Jul 2024 — May 2026</span>
                             <h4>Master of Computer Application (MCA)</h4>
-                            <p>Pondicherry University &nbsp;·&nbsp; CGPA: 7.9 / 10</p>
-                            <p class="tl-focus">Focus: Deep Learning · Computer Vision · NLP · RAG Systems</p>
+                            <p class="tl-inst">Pondicherry University &nbsp;·&nbsp; <strong>CGPA: 7.9 / 10</strong></p>
+                            <p class="tl-focus">Focus: Deep Learning · Computer Vision · NLP · RAG Systems · Geospatial
+                                AI</p>
+                            <p class="tl-detail">Key Courses: Machine Learning, Neural Networks & Deep Learning, Data
+                                Structures &
+                                Algorithms, Database Management Systems, Software Engineering, Computer Networks, Cloud
+                                Computing.</p>
+                            <div class="tl-docs">
+                                <!-- Replace # with actual file paths, e.g. /static/docs/mca_sem1.pdf -->
+                                <a href="/static/docs/mca_sem1.pdf" class="doc-link" target="_blank">Sem 1 Result ↗</a>
+                                <a href="/static/docs/mca_sem2.pdf" class="doc-link" target="_blank">Sem 2 Result ↗</a>
+                                <a href="/static/docs/mca_sem3.pdf" class="doc-link" target="_blank">Sem 3 Result ↗</a>
+                                <a href="/static/docs/mca_sem4.pdf" class="doc-link" target="_blank">Sem 4 Result ↗</a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Entry 2: BSc Mathematics -->
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
                             <span class="tl-date">Jul 2020 — Apr 2023</span>
                             <h4>B.Sc. Mathematics (Honours)</h4>
-                            <p>Vidyasagar University &nbsp;·&nbsp; CGPA: 7.89 / 10</p>
-                            <p class="tl-focus">Foundation: Linear Algebra · Calculus · Statistics · Probability</p>
+                            <p class="tl-inst">Vidyasagar University &nbsp;·&nbsp; <strong>CGPA: 7.89 / 10</strong></p>
+                            <p class="tl-focus">Foundation: Linear Algebra · Calculus · Statistics · Probability · Real
+                                Analysis</p>
+                            <p class="tl-detail">Key Courses: Abstract Algebra, Differential Equations, Numerical
+                                Analysis,
+                                Operations Research, Discrete Mathematics, Mathematical Statistics.</p>
+                            <div class="tl-docs">
+                                <a href="/static/docs/bsc_sem1.pdf" class="doc-link" target="_blank">Sem 1 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_sem2.pdf" class="doc-link" target="_blank">Sem 2 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_sem3.pdf" class="doc-link" target="_blank">Sem 3 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_sem4.pdf" class="doc-link" target="_blank">Sem 4 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_sem5.pdf" class="doc-link" target="_blank">Sem 5 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_sem6.pdf" class="doc-link" target="_blank">Sem 6 Result
+                                    ↗</a>
+                                <a href="/static/docs/bsc_certificate.pdf" class="doc-link" target="_blank">Certificate
+                                    ↗</a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Entry 3: Higher Secondary (Class XII) — Fill in your details -->
+                    <div class="timeline-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <span class="tl-date">2018 — 2020</span><!-- Update year -->
+                            <h4>Higher Secondary (Class XII — Science)</h4>
+                            <p class="tl-inst">[Tamluk Hamilton High School] &nbsp;·&nbsp; <strong>[WBHSE] ·
+                                    [72.4%]</strong></p>
+                            <p class="tl-focus">Subjects: Physics · Chemistry · Mathematics · Biology
+                            </p>
+                            <p class="tl-detail">Achieved strong performance in core science and mathematics subjects,
+                                building the analytical foundation for higher education in computer science.</p>
+                            <div class="tl-docs">
+                                <a href="/static/docs/class12_marksheet.pdf" class="doc-link" target="_blank">Marksheet
+                                    ↗</a>
+                                <a href="/static/docs/class12_certificate.pdf" class="doc-link"
+                                    target="_blank">Certificate ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entry 4: Secondary (Class X) — Fill in your details -->
+                    <div class="timeline-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <span class="tl-date">2016 — 2018</span><!-- Update year -->
+                            <h4>Secondary (Class X)</h4>
+                            <p class="tl-inst">[Tamluk Hamilton High School] &nbsp;·&nbsp; <strong>[WBBSE] ·
+                                    [90.4%]</strong>
+                            </p>
+                            <p class="tl-focus">Subjects: Bengali · English · Mathematics · Physical Science · Life
+                                Science · History · Geography · IT
+                            </p>
+                            <p class="tl-detail">Completed foundational schooling with distinction, demonstrating early
+                                aptitude for mathematics and logical reasoning.</p>
+                            <div class="tl-docs">
+                                <a href="/static/docs/class10_marksheet.pdf" class="doc-link" target="_blank">Marksheet
+                                    ↗</a>
+                                <a href="/static/docs/class10_certificate.pdf" class="doc-link"
+                                    target="_blank">Certificate ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ▓▓▓ SKILLS ▓▓▓ -->
+    <!-- ▓▓▓ SKILLS ▓▓▓
+       CHANGE 9: Added NumPy, Pandas; added Generative AI to domains (from updated resume)
+  ▓▓▓ -->
     <section class="section section-alt" id="skills">
         <div class="sec-watermark">02</div>
         <div class="container">
@@ -192,30 +287,29 @@
                 <div class="skill-group">
                     <h3 class="sg-title"><span class="sg-icon">⬡</span>Languages</h3>
                     <div class="skill-tags">
-                        <span class="tag">Python</span>
+                        <span class="tag tag-hot">Python</span>
                         <span class="tag">SQL</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Machine Learning</h3>
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML / DL Libraries</h3>
                     <div class="skill-tags">
+                        <span class="tag tag-hot">PyTorch</span>
+                        <span class="tag tag-hot">TensorFlow / Keras</span>
                         <span class="tag">Scikit-learn</span>
-                        <span class="tag">Logistic Regression</span>
-                        <span class="tag">SVM</span>
-                        <span class="tag">Feature Engineering</span>
-                        <span class="tag">Model Evaluation</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Deep Learning</h3>
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Architectures</h3>
                     <div class="skill-tags">
-                        <span class="tag tag-hot">PyTorch</span>
-                        <span class="tag tag-hot">TensorFlow</span>
-                        <span class="tag">Keras</span>
+                        <span class="tag tag-hot">CNN (1D / 2D)</span>
                         <span class="tag">ANN</span>
-                        <span class="tag">CNN</span>
                         <span class="tag">RNN / LSTM / GRU</span>
                         <span class="tag">Transformers</span>
+                        <span class="tag">UNet / ResUNet</span>
+                        <span class="tag">Encoder–Decoder</span>
                     </div>
                 </div>
                 <div class="skill-group">
@@ -223,21 +317,33 @@
                     <div class="skill-tags">
                         <span class="tag tag-hot">Computer Vision</span>
                         <span class="tag tag-hot">NLP</span>
+                        <span class="tag tag-hot">Generative AI</span>
                         <span class="tag">Remote Sensing</span>
                         <span class="tag">Geospatial AI</span>
                         <span class="tag tag-hot">RAG</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Tools & Infra</h3>
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML Techniques</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">Model Evaluation</span>
+                        <span class="tag">Data Augmentation</span>
+                        <span class="tag">Class Imbalance Handling</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Tools &amp; Infra</h3>
                     <div class="skill-tags">
                         <span class="tag tag-hot">FastAPI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">FAISS</span>
                         <span class="tag">MongoDB</span>
                         <span class="tag">PostgreSQL</span>
                         <span class="tag">Docker</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">Git</span>
+                        <span class="tag">Git / GitHub</span>
                         <span class="tag">VS Code</span>
                         <span class="tag">Jupyter</span>
                         <span class="tag">Google Colab</span>
@@ -246,27 +352,32 @@
                 <div class="skill-group">
                     <h3 class="sg-title"><span class="sg-icon">⬡</span>Soft Skills</h3>
                     <div class="skill-tags">
+                        <span class="tag">Problem-Solving</span>
                         <span class="tag">Critical Thinking</span>
                         <span class="tag">Attention to Detail</span>
-                        <span class="tag">Collaborative Problem-Solving</span>
+                        <span class="tag">Collaboration</span>
                         <span class="tag">Adaptability</span>
-                        <span class="tag">Effective Communication</span>
+                        <span class="tag">Communication</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ▓▓▓ PROJECTS ▓▓▓ -->
+    <!-- ▓▓▓ PROJECTS ▓▓▓
+       CHANGE 5: Tilt animation removed (via JS), more info added, report PDF links added
+       CHANGE 9: Updated content from new resume
+  ▓▓▓ -->
     <section class="section" id="projects">
         <div class="sec-watermark">03</div>
         <div class="container">
             <div class="section-header reveal-left">
                 <p class="section-index">03</p>
-                <h2 class="section-title">Projects & Research</h2>
+                <h2 class="section-title">Projects &amp; Research</h2>
             </div>
             <div class="projects-list">
 
+                <!-- PROJECT 1: Accent Classification -->
                 <article class="project-card reveal-up">
                     <div class="proj-scanline"></div>
                     <div class="proj-head">
@@ -279,27 +390,48 @@
                     <h3 class="proj-title">Accent-Based Regional Origin Identification</h3>
                     <p class="proj-org">Pondicherry University</p>
                     <p class="proj-desc">Developed a multiclass accent classification system by extracting and
-                        temporally aligning 7 speech features — MFCC, Mel-spectrogram, Spectral Contrast, Chroma, ZCR,
-                        RMS, and Tonnetz — from 1,164 audio samples. Benchmarked 5 architectures (SVM, Logistic
-                        Regression, ANN, 1D-CNN, 2D-CNN) with regularisation, data augmentation, and class weighting.
+                        temporally
+                        aligning 7 speech features — MFCC, Mel-spectrogram, Spectral Contrast, Chroma, ZCR, RMS, and
+                        Tonnetz —
+                        from 1,164 audio samples. Created a robust dataset and designed an evaluation pipeline for
+                        comparing
+                        multiple model architectures.</p>
+                    <p class="proj-desc">Benchmarked 5 architectures (SVM, Logistic Regression, ANN, 1D-CNN, 2D-CNN)
+                        with
+                        regularisation, data augmentation, and class weighting. The optimised 4-block 2D-CNN achieved
+                        <strong>97% test accuracy</strong>, outperforming traditional ML baselines by over 4 percentage
+                        points.
+                        Applied class balancing and regularisation to improve generalisation and reduce overfitting
+                        during
+                        deployment.
                     </p>
                     <div class="proj-metrics">
                         <div class="metric"><span class="metric-val">97%</span><span class="metric-key">Test Accuracy
                                 (2D-CNN)</span></div>
-                        <div class="metric"><span class="metric-val">5</span><span class="metric-key">Models
+                        <div class="metric"><span class="metric-val">92–93%</span><span class="metric-key">Baseline
+                                Models (SVM/ANN)</span></div>
+                        <div class="metric"><span class="metric-val">5</span><span class="metric-key">Architectures
                                 Benchmarked</span></div>
                         <div class="metric"><span class="metric-val">1,164</span><span class="metric-key">Audio
                                 Samples</span></div>
-                        <div class="metric"><span class="metric-val">7</span><span class="metric-key">Speech
-                                Features</span></div>
+                        <div class="metric"><span class="metric-val">7</span><span class="metric-key">Speech Features
+                                Aligned</span></div>
                     </div>
                     <div class="proj-tags">
-                        <span>Python</span><span>CNN</span><span>Audio Processing</span><span>MFCC</span><span>Hugging
-                            Face</span>
+                        <span>Python</span><span>PyTorch</span><span>2D-CNN</span><span>Audio Processing</span>
+                        <span>MFCC</span><span>Mel-spectrogram</span><span>Scikit-learn</span><span>Hugging Face</span>
                     </div>
-                    <a href="https://huggingface.co" target="_blank" class="proj-link">Live Demo on Hugging Face ↗</a>
+                    <div class="proj-actions">
+                        <a href="https://huggingface.co/spaces/anit99/Accent_Classifier_CNN_2D/tree/main"
+                            target="_blank" class="proj-link">Live Demo on Hugging Face
+                            ↗</a>
+                        <!-- Replace # with actual report path, e.g. /static/docs/accent_report.pdf -->
+                        <a href="/static/docs/accent_report.pdf" target="_blank" class="proj-report-link">Project
+                            Report</a>
+                    </div>
                 </article>
 
+                <!-- PROJECT 2: Mineral Segmentation -->
                 <article class="project-card reveal-up" style="--delay:0.1s">
                     <div class="proj-scanline"></div>
                     <div class="proj-head">
@@ -311,33 +443,56 @@
                     </div>
                     <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
                     <p class="proj-org">Pondicherry University</p>
-                    <p class="proj-desc">Engineered an end-to-end semantic segmentation pipeline for mineralization
-                        mapping over Salem District (9,561 km²) using Landsat-8 satellite imagery (7 bands, 30m).
-                        Applied PCA reduction (97.68% variance, 3 components) and 15-channel multi-source geospatial
-                        feature fusion. Resolved 2,509:1 class imbalance via 10× mineral augmentation and Weighted BCE
-                        + Dice loss. Comparatively trained UNet, Attention UNet, and ResUNet architectures using AdamW.
-                    </p>
+                    <p class="proj-desc">Engineered an end-to-end semantic segmentation pipeline for mineralisation
+                        mapping
+                        over Salem District (9,561 km²) using Landsat-8 satellite imagery (7 spectral bands, 30 m
+                        resolution).
+                        Applied PCA reduction (97.68% variance retained, 3 components) and 15-channel multi-source
+                        geospatial
+                        feature fusion.</p>
+                    <p class="proj-desc">Resolved a severe <strong>2,509:1 class imbalance</strong> via 10× mineral
+                        augmentation
+                        and a Weighted BCE + Dice loss combination. Independently designed and comparatively trained
+                        three
+                        encoder-decoder architectures (UNet, Attention UNet, ResUNet) using the AdamW optimiser.
+                        Identified
+                        ResUNet-15ch as the most operationally effective model, achieving the highest mineral recall
+                        (92.42%)
+                        critical for geological survey applications.</p>
                     <div class="proj-metrics">
                         <div class="metric"><span class="metric-val">90.67%</span><span class="metric-key">UNet IoU
                                 Score</span></div>
                         <div class="metric"><span class="metric-val">95.11%</span><span class="metric-key">UNet F1
                                 Score</span></div>
+                        <div class="metric"><span class="metric-val">92.42%</span><span class="metric-key">ResUNet
+                                Recall (Best)</span></div>
                         <div class="metric"><span class="metric-val">2509:1</span><span class="metric-key">Class
                                 Imbalance Solved</span></div>
                         <div class="metric"><span class="metric-val">3</span><span class="metric-key">Architectures
                                 Compared</span></div>
+                        <div class="metric"><span class="metric-val">9,561</span><span class="metric-key">km²
+                                Mapped</span></div>
                     </div>
                     <div class="proj-highlight">
-                        <strong>Best for geological surveys:</strong> ResUNet-15ch achieved highest mineral recall
-                        (92.42%), critical for operational geological survey applications.
+                        <strong>Geological survey insight:</strong> ResUNet-15ch selected as the operationally superior
+                        model —
+                        highest mineral recall (92.42%) minimises missed detections in field survey contexts.
                     </div>
                     <div class="proj-tags">
-                        <span>PyTorch</span><span>UNet</span><span>Attention
-                            UNet</span><span>ResUNet</span><span>Landsat-8</span><span>PCA</span><span>Geospatial
-                            AI</span>
+                        <span>PyTorch</span><span>UNet</span><span>Attention UNet</span><span>ResUNet</span>
+                        <span>Landsat-8</span><span>PCA</span><span>Geospatial AI</span><span>Semantic
+                            Segmentation</span>
+                    </div>
+                    <div class="proj-actions">
+                        <!-- Replace # with your actual GitHub repo URL -->
+                        <a href="https://github.com/anitkumarmaity1-hash/Minerals_Prospective_Mapping" target="_blank"
+                            class="proj-link">Source Code on GitHub ↗</a>
+                        <a href="/static/docs/mineral_report.pdf" target="_blank" class="proj-report-link">Project
+                            Report</a>
                     </div>
                 </article>
 
+                <!-- PROJECT 3: Medical Chatbot -->
                 <article class="project-card project-active reveal-up" style="--delay:0.2s">
                     <div class="proj-scanline"></div>
                     <div class="proj-head">
@@ -349,23 +504,34 @@
                     </div>
                     <h3 class="proj-title">RAG-Based Medical Chatbot</h3>
                     <p class="proj-org">Personal Project</p>
-                    <p class="proj-desc">Architecting a Retrieval-Augmented Generation (RAG) healthcare chatbot using
-                        Python, FastAPI, and LangChain, integrating LLM-powered context-aware response generation over a
-                        domain-specific medical knowledge base. Implementing vector embedding, FAISS-based document
-                        retrieval, and prompt engineering pipelines; designing scalable backend infrastructure using
-                        PostgreSQL and Docker.</p>
+                    <p class="proj-desc">Developing a Retrieval-Augmented Generation (RAG) healthcare chatbot using
+                        Python,
+                        FastAPI, and LangChain. Integrates LLM-powered context-aware response generation over a
+                        domain-specific
+                        medical knowledge base, enabling accurate and grounded answers.</p>
+                    <p class="proj-desc">Implementing <strong>vector embedding</strong> and <strong>FAISS-based document
+                            retrieval</strong> pipelines alongside advanced prompt engineering. Designing a scalable
+                        backend
+                        infrastructure using PostgreSQL and Docker to optimise retrieval latency and answer accuracy.
+                    </p>
                     <div class="proj-metrics">
                         <div class="metric"><span class="metric-val">FAISS</span><span class="metric-key">Vector
                                 Retrieval</span></div>
-                        <div class="metric"><span class="metric-val">RAG</span><span
-                                class="metric-key">Architecture</span></div>
-                        <div class="metric"><span class="metric-val">Docker</span><span
-                                class="metric-key">Containerised</span></div>
-                        <div class="metric"><span class="metric-val">LangChain</span><span
-                                class="metric-key">Orchestration</span></div>
+                        <div class="metric"><span class="metric-val">RAG</span><span class="metric-key">Architecture
+                                Pattern</span></div>
+                        <div class="metric"><span class="metric-val">Docker</span><span class="metric-key">Containerised
+                                Deploy</span></div>
+                        <div class="metric"><span class="metric-val">LangChain</span><span class="metric-key">LLM
+                                Orchestration</span></div>
                     </div>
                     <div class="proj-tags">
-                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>FAISS</span><span>PostgreSQL</span><span>Docker</span><span>RAG</span>
+                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>FAISS</span>
+                        <span>PostgreSQL</span><span>Docker</span><span>RAG</span><span>Prompt Engineering</span>
+                    </div>
+                    <div class="proj-actions">
+                        <a href="" target="_blank" class="proj-link">available on completion</a>
+                        <!-- Report will be added once project is complete -->
+                        <span class="proj-wip-note">Report available on completion</span>
                     </div>
                 </article>
 
@@ -373,7 +539,9 @@
         </div>
     </section>
 
-    <!-- ▓▓▓ CERTIFICATIONS ▓▓▓ -->
+    <!-- ▓▓▓ CERTIFICATIONS ▓▓▓
+       CHANGE 6: Each cert card now has a PDF download link
+  ▓▓▓ -->
     <section class="section section-alt" id="certifications">
         <div class="sec-watermark">04</div>
         <div class="container">
@@ -383,15 +551,20 @@
                 <p class="section-sub">NPTEL — National Programme on Technology Enhanced Learning</p>
             </div>
             <div class="certs-grid">
+
                 <div class="cert-card reveal-up">
                     <div class="cert-glow"></div>
-                    <div class="cert-badge">Elite Silver</div>
+                    <div class="cert-badge cert-badge-silver">Elite Silver</div>
                     <h4>The Joy of Computing Using Python</h4>
                     <p class="cert-meta">IIT Madras &nbsp;·&nbsp; Score: 76%</p>
                     <div class="cert-bar-wrap">
                         <div class="cert-bar" style="--w:76%"></div>
                     </div>
+                    <!-- Replace # with path to your certificate PDF -->
+                    <a href="/static/docs/cert_computing_python.pdf" target="_blank" class="cert-pdf-link">View
+                        Certificate ↗</a>
                 </div>
+
                 <div class="cert-card reveal-up" style="--delay:0.1s">
                     <div class="cert-glow"></div>
                     <div class="cert-badge">Elite</div>
@@ -400,7 +573,10 @@
                     <div class="cert-bar-wrap">
                         <div class="cert-bar" style="--w:61%"></div>
                     </div>
+                    <a href="/static/docs/cert_data_analytics.pdf" target="_blank" class="cert-pdf-link">View
+                        Certificate ↗</a>
                 </div>
+
                 <div class="cert-card reveal-up" style="--delay:0.2s">
                     <div class="cert-glow"></div>
                     <div class="cert-badge">Elite</div>
@@ -409,7 +585,10 @@
                     <div class="cert-bar-wrap">
                         <div class="cert-bar" style="--w:64%"></div>
                     </div>
+                    <a href="/static/docs/cert_intro_ml.pdf" target="_blank" class="cert-pdf-link">View Certificate
+                        ↗</a>
                 </div>
+
                 <div class="cert-card reveal-up" style="--delay:0.3s">
                     <div class="cert-glow"></div>
                     <div class="cert-badge">Elite</div>
@@ -418,12 +597,17 @@
                     <div class="cert-bar-wrap">
                         <div class="cert-bar" style="--w:70%"></div>
                     </div>
+                    <a href="/static/docs/cert_deep_learning.pdf" target="_blank" class="cert-pdf-link">View Certificate
+                        ↗</a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ▓▓▓ CONTACT ▓▓▓ -->
+    <!-- ▓▓▓ CONTACT ▓▓▓
+       CHANGE 7: Fixed form — uses getElementById, robust error handling
+  ▓▓▓ -->
     <section class="section" id="contact">
         <div class="sec-watermark">05</div>
         <div class="container">
@@ -433,8 +617,8 @@
             </div>
             <div class="contact-grid">
                 <div class="contact-info reveal-up">
-                    <p class="contact-desc">I'm open to research collaborations, internships, and full-time ML/AI roles.
-                        Feel free to reach out!</p>
+                    <p class="contact-desc">I'm open to research collaborations, ML/AI internships, and full-time roles.
+                        Whether it's a challenging dataset or a fresh AI product idea — let's talk!</p>
                     <div class="contact-links">
                         <a href="mailto:anitkumarmaity1@gmail.com" class="contact-item">
                             <span class="ci-icon">✉</span>
@@ -444,39 +628,43 @@
                             <span class="ci-icon">☎</span>
                             <span>+91 8967784334</span>
                         </a>
-                        <a href="https://linkedin.com/in/anit-kumar-maity-41308734a" target="_blank"
+                        <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank"
                             class="contact-item">
                             <span class="ci-icon">in</span>
                             <span>linkedin.com/in/anit-kumar-maity</span>
                         </a>
+                        <a href="https://github.com/anitkumarmaity1-hash" target="_blank" class="contact-item">
+                            <span class="ci-icon">GH</span>
+                            <span>github.com/YOUR_USERNAME</span>
+                        </a>
                         <div class="contact-item">
                             <span class="ci-icon">📍</span>
-                            <span>Tamluk, West Bengal, India</span>
+                            <span>Tamluk, Purba Medinipur, West Bengal, 721636, India</span>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form reveal-up" id="contact-form" style="--delay:0.15s">
+                <form class="contact-form reveal-up" id="contact-form" style="--delay:0.15s" novalidate>
                     <div class="form-group floating">
-                        <input type="text" id="name" name="name" placeholder=" " required />
-                        <label for="name">Name</label>
+                        <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" />
+                        <label for="cf-name">Name</label>
                     </div>
                     <div class="form-group floating">
-                        <input type="email" id="email" name="email" placeholder=" " required />
-                        <label for="email">Email</label>
+                        <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email" />
+                        <label for="cf-email">Email</label>
                     </div>
                     <div class="form-group floating">
-                        <input type="text" id="subject" name="subject" placeholder=" " required />
-                        <label for="subject">Subject</label>
+                        <input type="text" id="cf-subject" name="subject" placeholder=" " />
+                        <label for="cf-subject">Subject</label>
                     </div>
                     <div class="form-group floating">
-                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
-                        <label for="message">Message</label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
+                        <label for="cf-message">Message</label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
                         <span id="btn-text">Send Message</span>
                         <span class="btn-arrow">→</span>
                     </button>
-                    <div id="form-status" class="form-status"></div>
+                    <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
                 </form>
             </div>
         </div>
@@ -486,10 +674,10 @@
     <footer class="footer">
         <div class="footer-inner">
             <span class="footer-logo"><span class="logo-bracket">[</span>AKM<span class="logo-bracket">]</span></span>
-            <p class="footer-copy">Designed & built by Anit Kumar Maity · 2026</p>
+            <p class="footer-copy">Designed &amp; built by Anit Kumar Maity · 2026</p>
             <div class="footer-links">
-                <a href="https://github.com/" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/anit-kumar-maity-41308734a" target="_blank">LinkedIn</a>
+                <a href="https://github.com/anitkumarmaity1-hash" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank">LinkedIn</a>
                 <a href="mailto:anitkumarmaity1@gmail.com">Email</a>
             </div>
         </div>

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   ANIT KUMAR MAITY — Portfolio v2.0
+   ANIT KUMAR MAITY — Portfolio v2.1
    Theme: Neural-Cyberpunk · Living Interface · Precise
    ═══════════════════════════════════════════════════════ */
 
@@ -42,6 +42,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* CHANGE 4: Normal cursor restored */
 body {
     background: var(--bg);
     color: var(--text);
@@ -49,7 +50,8 @@ body {
     font-size: 1.08rem;
     line-height: 1.78;
     overflow-x: hidden;
-    cursor: none;
+    cursor: auto;
+    /* ← normal cursor */
 }
 
 a {
@@ -132,44 +134,6 @@ strong {
     }
 }
 
-/* ─── CUSTOM CURSOR ─── */
-#cursor-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--cyan);
-    border-radius: 50%;
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.08s, width 0.2s, height 0.2s, background 0.2s;
-    box-shadow: 0 0 10px var(--cyan);
-}
-
-#cursor-ring {
-    width: 36px;
-    height: 36px;
-    border: 1.5px solid rgba(0, 212, 255, 0.5);
-    border-radius: 50%;
-    position: fixed;
-    z-index: 9998;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s var(--ease), height 0.3s var(--ease),
-        border-color 0.3s, background 0.3s;
-}
-
-body.cursor-hover #cursor-ring {
-    width: 56px;
-    height: 56px;
-    border-color: rgba(0, 212, 255, 0.25);
-    background: rgba(0, 212, 255, 0.06);
-}
-
-body.cursor-click #cursor-dot {
-    transform: translate(-50%, -50%) scale(0.5);
-}
-
 /* ─── LOADER ─── */
 #loader {
     position: fixed;
@@ -192,7 +156,6 @@ body.cursor-click #cursor-dot {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
     min-width: 320px;
 }
 
@@ -327,17 +290,80 @@ body.cursor-click #cursor-dot {
     justify-content: space-between;
 }
 
+/* CHANGE 1: Nav logo with photo + brand + HOME */
 .nav-logo {
-    font-family: var(--font-mono);
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text);
-    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: opacity 0.2s;
 }
 
 .nav-logo:hover {
+    opacity: 0.85;
+}
+
+.nav-logo-photo {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid var(--border-h);
+    background: var(--cyan-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.nav-logo:hover .nav-logo-photo {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+.nav-logo-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.nav-logo-initials {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 600;
     color: var(--cyan);
+    letter-spacing: 0.04em;
+    z-index: 1;
+}
+
+.nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1;
+}
+
+.nav-logo-brand {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.1em;
+}
+
+.nav-logo-home {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--muted);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 1px;
 }
 
 .logo-bracket {
@@ -359,6 +385,7 @@ body.cursor-click #cursor-dot {
     transition: color 0.2s;
     position: relative;
     padding-bottom: 2px;
+    cursor: pointer;
 }
 
 .nav-links a::after {
@@ -425,6 +452,7 @@ body.cursor-click #cursor-dot {
     color: var(--muted);
     letter-spacing: 0.1em;
     transition: color 0.2s, padding-left 0.2s;
+    cursor: pointer;
 }
 
 .mob-link:hover {
@@ -506,6 +534,64 @@ body.cursor-click #cursor-dot {
     z-index: 1;
 }
 
+/* CHANGE 2: Profile photo above hero name */
+.hero-photo-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.8rem;
+}
+
+.hero-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(0, 212, 255, 0.35);
+    background: var(--cyan-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: heroReveal 0.8s var(--ease) 2.85s both;
+}
+
+.hero-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.hero-photo-initials {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    z-index: 1;
+}
+
+.hero-photo-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 212, 255, 0.2);
+    animation: ringRotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
 .hero-tag {
     font-family: var(--font-mono);
     font-size: 0.72rem;
@@ -543,7 +629,6 @@ body.cursor-click #cursor-dot {
     }
 }
 
-/* Hero Name + Glitch */
 .hero-name {
     font-family: var(--font-head);
     font-size: clamp(4rem, 9vw, 8rem);
@@ -588,11 +673,6 @@ body.cursor-click #cursor-dot {
         clip-path: none;
     }
 
-    75% {
-        text-shadow: 2px 0 var(--red), -2px 0 var(--cyan);
-        transform: none;
-    }
-
     100% {
         text-shadow: none;
         transform: none;
@@ -600,11 +680,6 @@ body.cursor-click #cursor-dot {
     }
 }
 
-.name-accent {
-    color: var(--cyan);
-}
-
-/* Social links on hero */
 .hero-social {
     display: flex;
     gap: 0.8rem;
@@ -625,6 +700,7 @@ body.cursor-click #cursor-dot {
     border-radius: 50%;
     border: 1px solid var(--border-h);
     color: var(--muted);
+    cursor: pointer;
     transition: all 0.25s var(--ease);
 }
 
@@ -636,7 +712,6 @@ body.cursor-click #cursor-dot {
     box-shadow: 0 8px 20px rgba(0, 212, 255, 0.18);
 }
 
-/* Hero right */
 .hero-right {
     animation: heroReveal 0.9s var(--ease) 3.0s both;
 }
@@ -731,7 +806,6 @@ body.cursor-click #cursor-dot {
     box-shadow: 0 0 6px var(--green);
 }
 
-/* Hero reveal animation */
 @keyframes heroReveal {
     from {
         opacity: 0;
@@ -744,7 +818,6 @@ body.cursor-click #cursor-dot {
     }
 }
 
-/* Scroll hint */
 .scroll-hint {
     position: absolute;
     bottom: 2.5rem;
@@ -805,7 +878,7 @@ body.cursor-click #cursor-dot {
     padding: 0.75rem 1.6rem;
     border-radius: var(--radius);
     border: 1px solid transparent;
-    cursor: none;
+    cursor: pointer;
     transition: all 0.3s var(--ease);
     text-transform: uppercase;
     position: relative;
@@ -888,7 +961,6 @@ body.cursor-click #cursor-dot {
     margin: 0 auto;
 }
 
-/* Large background watermark numbers */
 .sec-watermark {
     position: absolute;
     right: -20px;
@@ -940,89 +1012,28 @@ body.cursor-click #cursor-dot {
     opacity: 0.7;
 }
 
-/* ─── ABOUT ─── */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
+/* CHANGE 3: About — full-width text, no stats grid */
+.about-text-full {
+    max-width: 820px;
     margin-bottom: 4rem;
-    align-items: start;
 }
 
-.about-text p {
+.about-text-full p {
     margin-bottom: 1.2rem;
     color: var(--text-dim);
     font-size: 1.08rem;
+    line-height: 1.85;
 }
 
-.about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+.about-text-full p:last-child {
+    margin-bottom: 0;
 }
 
-.stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.4rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    position: relative;
-    overflow: hidden;
+/* ─── TIMELINE (Education) ─── */
+.edu-timeline {
+    /* inherits from about section */
 }
 
-.stat-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--cyan), transparent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s var(--ease);
-}
-
-.stat-card:hover {
-    border-color: var(--border-h);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.08);
-}
-
-.stat-card:hover::before {
-    transform: scaleX(1);
-}
-
-.stat-num {
-    font-family: var(--font-head);
-    font-size: 2.2rem;
-    color: var(--cyan);
-    line-height: 1;
-}
-
-.stat-pct {
-    font-size: 1rem;
-}
-
-.stat-label {
-    font-family: var(--font-mono);
-    font-size: 0.66rem;
-    color: var(--muted);
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-}
-
-.stat-label small {
-    display: block;
-    opacity: 0.65;
-    margin-top: 2px;
-}
-
-/* ─── TIMELINE ─── */
 .timeline {
     display: flex;
     flex-direction: column;
@@ -1032,7 +1043,7 @@ body.cursor-click #cursor-dot {
     display: grid;
     grid-template-columns: 16px 1fr;
     gap: 1.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
     position: relative;
 }
 
@@ -1061,7 +1072,7 @@ body.cursor-click #cursor-dot {
 
 .tl-content h4 {
     font-family: var(--font-mono);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text);
     margin-bottom: 0.3rem;
@@ -1076,15 +1087,54 @@ body.cursor-click #cursor-dot {
     margin-bottom: 0.3rem;
 }
 
-.tl-content p {
+.tl-inst {
     font-size: 0.92rem;
     color: var(--muted);
+    margin-bottom: 0.25rem;
+}
+
+.tl-inst strong {
+    color: var(--cyan);
 }
 
 .tl-focus {
-    font-size: 0.78rem !important;
-    color: rgba(0, 212, 255, 0.55) !important;
-    margin-top: 0.3rem;
+    font-size: 0.82rem;
+    color: rgba(0, 212, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.tl-detail {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+}
+
+/* CHANGE 5 & 6: PDF / doc links used in education, projects, certifications */
+.tl-docs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.doc-link {
+    font-family: var(--font-mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(0, 212, 255, 0.05);
+    color: var(--cyan);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.doc-link:hover {
+    background: rgba(0, 212, 255, 0.12);
+    border-color: var(--cyan);
+    transform: translateY(-1px);
 }
 
 /* ─── SKILLS ─── */
@@ -1199,10 +1249,9 @@ body.cursor-click #cursor-dot {
     position: relative;
     overflow: hidden;
     transition: border-color 0.3s, box-shadow 0.3s;
-    transform-style: preserve-3d;
+    /* CHANGE 5: No transform-style or 3D - tilt removed entirely via JS */
 }
 
-/* Scanline sweep on hover */
 .proj-scanline {
     position: absolute;
     top: 0;
@@ -1211,7 +1260,6 @@ body.cursor-click #cursor-dot {
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--cyan), transparent);
     transform: translateY(-100%);
-    transition: none;
     opacity: 0;
 }
 
@@ -1230,7 +1278,6 @@ body.cursor-click #cursor-dot {
     }
 }
 
-/* Left accent bar */
 .project-card::before {
     content: '';
     position: absolute;
@@ -1243,7 +1290,6 @@ body.cursor-click #cursor-dot {
     border-radius: 0 0 3px 0;
 }
 
-/* Gradient border overlay */
 .project-card::after {
     content: '';
     position: absolute;
@@ -1348,7 +1394,7 @@ body.cursor-click #cursor-dot {
 .proj-desc {
     color: var(--text-dim);
     font-size: 0.98rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.75;
 }
 
@@ -1419,18 +1465,54 @@ body.cursor-click #cursor-dot {
     color: var(--cyan);
 }
 
+/* Project action links (Live Demo + Report PDF) */
+.proj-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
 .proj-link {
     font-family: var(--font-mono);
     font-size: 0.73rem;
     color: var(--cyan);
     letter-spacing: 0.08em;
     transition: opacity 0.2s, letter-spacing 0.3s;
-    display: inline-block;
+    cursor: pointer;
 }
 
 .proj-link:hover {
     opacity: 0.7;
     letter-spacing: 0.12em;
+}
+
+.proj-report-link {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    border-radius: 4px;
+    color: var(--amber);
+    background: rgba(245, 166, 35, 0.05);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.proj-report-link:hover {
+    background: rgba(245, 166, 35, 0.12);
+    border-color: var(--amber);
+    transform: translateY(-1px);
+}
+
+.proj-wip-note {
+    font-family: var(--font-mono);
+    font-size: 0.67rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    font-style: italic;
 }
 
 /* ─── CERTIFICATIONS ─── */
@@ -1448,6 +1530,9 @@ body.cursor-click #cursor-dot {
     transition: border-color 0.3s, transform 0.3s var(--ease), box-shadow 0.3s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .cert-glow {
@@ -1484,6 +1569,13 @@ body.cursor-click #cursor-dot {
     display: inline-block;
     padding: 0.18rem 0.65rem;
     margin-bottom: 0.9rem;
+    width: fit-content;
+}
+
+.cert-badge-silver {
+    color: #d0e0ff;
+    background: rgba(200, 220, 255, 0.08);
+    border-color: rgba(200, 220, 255, 0.22);
 }
 
 .cert-card h4 {
@@ -1493,6 +1585,7 @@ body.cursor-click #cursor-dot {
     color: var(--text);
     margin-bottom: 0.5rem;
     line-height: 1.45;
+    flex: 1;
 }
 
 .cert-meta {
@@ -1508,6 +1601,7 @@ body.cursor-click #cursor-dot {
     background: rgba(245, 166, 35, 0.1);
     border-radius: 99px;
     overflow: hidden;
+    margin-bottom: 1rem;
 }
 
 .cert-bar {
@@ -1521,6 +1615,29 @@ body.cursor-click #cursor-dot {
 
 .cert-card.bar-animated .cert-bar {
     width: var(--w);
+}
+
+/* CHANGE 6: Certificate PDF link */
+.cert-pdf-link {
+    font-family: var(--font-mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    border: 1px solid rgba(245, 166, 35, 0.25);
+    background: rgba(245, 166, 35, 0.05);
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: auto;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.cert-pdf-link:hover {
+    background: rgba(245, 166, 35, 0.12);
+    border-color: var(--amber);
+    transform: translateY(-1px);
 }
 
 /* ─── CONTACT ─── */
@@ -1582,7 +1699,7 @@ body.cursor-click #cursor-dot {
     box-shadow: 0 0 14px rgba(0, 212, 255, 0.3);
 }
 
-/* Floating labels form */
+/* CHANGE 7: Fixed floating labels form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -1592,7 +1709,6 @@ body.cursor-click #cursor-dot {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
 }
 
 .form-group.floating {
@@ -1637,6 +1753,7 @@ body.cursor-click #cursor-dot {
     transition: border-color 0.25s, box-shadow 0.25s;
     resize: vertical;
     width: 100%;
+    cursor: text;
 }
 
 .form-group input:focus,
@@ -1654,9 +1771,10 @@ body.cursor-click #cursor-dot {
     font-family: var(--font-mono);
     font-size: 0.78rem;
     text-align: center;
-    padding: 0.7rem;
+    padding: 0.8rem 1rem;
     border-radius: var(--radius);
     display: none;
+    margin-top: 0.3rem;
 }
 
 .form-status.success {
@@ -1716,6 +1834,7 @@ body.cursor-click #cursor-dot {
     color: var(--muted);
     letter-spacing: 0.08em;
     transition: color 0.2s;
+    cursor: pointer;
 }
 
 .footer-links a:hover {
@@ -1734,7 +1853,7 @@ body.cursor-click #cursor-dot {
     background: var(--surface);
     border: 1px solid var(--border-h);
     color: var(--cyan);
-    cursor: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1760,8 +1879,7 @@ body.cursor-click #cursor-dot {
 .reveal-up {
     opacity: 0;
     transform: translateY(36px);
-    transition: opacity 0.8s var(--ease) var(--delay, 0s),
-        transform 0.8s var(--ease) var(--delay, 0s);
+    transition: opacity 0.8s var(--ease) var(--delay, 0s), transform 0.8s var(--ease) var(--delay, 0s);
 }
 
 .reveal-up.visible {
@@ -1780,31 +1898,8 @@ body.cursor-click #cursor-dot {
     transform: none;
 }
 
-/* ─── ANIMATIONS ─── */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px)
-    }
-
-    to {
-        opacity: 1;
-        transform: none
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
 /* ─── RESPONSIVE ─── */
-@media (max-width:900px) {
+@media (max-width: 900px) {
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -1812,11 +1907,6 @@ body.cursor-click #cursor-dot {
 
     .hero-name {
         font-size: clamp(3.5rem, 12vw, 6rem);
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
     }
 
     .contact-grid {
@@ -1831,23 +1921,33 @@ body.cursor-click #cursor-dot {
     .nav-burger {
         display: flex;
     }
+
+    .hero-photo {
+        width: 110px;
+        height: 110px;
+    }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .section {
         padding: 4rem 1.2rem;
     }
 
-    .about-stats {
-        grid-template-columns: 1fr 1fr;
+    .hero {
+        padding: 80px 1.2rem 3rem;
+    }
+
+    .hero-photo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .hero-photo-initials {
+        font-size: 1.5rem;
     }
 
     .proj-metrics {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .hero {
-        padding: 80px 1.2rem 3rem;
     }
 
     .footer-inner {
@@ -1864,12 +1964,12 @@ body.cursor-click #cursor-dot {
         bottom: 1.2rem;
     }
 
-    body {
-        cursor: auto;
+    .timeline-item {
+        grid-template-columns: 12px 1fr;
+        gap: 1rem;
     }
 
-    #cursor-dot,
-    #cursor-ring {
-        display: none;
+    .tl-docs {
+        flex-wrap: wrap;
     }
 }

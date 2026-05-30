@@ -1,5 +1,9 @@
 /* ═══════════════════════════════════════════════
-   ANIT KUMAR MAITY — Portfolio Script v2.0
+   ANIT KUMAR MAITY — Portfolio Script v2.1
+   Changes:
+   - [REMOVED] Section 2: Custom cursor (CHANGE 4)
+   - [REMOVED] Section 12: 3D card tilt (CHANGE 5)
+   - [FIXED]   Section 16: Contact form uses getElementById (CHANGE 7)
    ═══════════════════════════════════════════════ */
 
 'use strict';
@@ -19,9 +23,7 @@
     ];
 
     let progress = 0;
-    let lineIndex = 0;
 
-    // Animate progress bar
     function setProgress(val) {
         progress = Math.min(val, 100);
         bar.style.width = progress + '%';
@@ -37,10 +39,8 @@
         }, 420);
     }
 
-    // Staggered sequence
     setTimeout(() => showLine(0), 400);
 
-    // Progress animation
     const intervals = [
         { target: 30, delay: 500, duration: 300 },
         { target: 62, delay: 900, duration: 400 },
@@ -61,12 +61,10 @@
         }, delay);
     });
 
-    // Exit loader
     setTimeout(() => {
         loader.classList.add('exit');
         setTimeout(() => {
             loader.style.display = 'none';
-            // Trigger hero animations
             document.body.classList.add('loaded');
             startTyping();
             scheduleGlitch();
@@ -76,49 +74,17 @@
 
 
 /* ════════════════════════════════════════════════
-   2. CUSTOM CURSOR
+   2. (REMOVED) Custom cursor — using normal system cursor
+   CHANGE 4: cursor: auto set in CSS, no JS needed
    ════════════════════════════════════════════════ */
-(function () {
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    if (!dot || !ring) return;
-
-    let mx = -100, my = -100;
-    let rx = -100, ry = -100;
-
-    document.addEventListener('mousemove', e => {
-        mx = e.clientX;
-        my = e.clientY;
-        dot.style.left = mx + 'px';
-        dot.style.top = my + 'px';
-    });
-
-    document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
-    document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
-
-    // Hoverable targets
-    const hoverTargets = 'a, button, .btn, .tag, .proj-tags span, .hs-link, .contact-item, .skill-group, .stat-card, .cert-card, .nav-links a';
-    document.querySelectorAll(hoverTargets).forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-
-    // Smooth ring follow (lerp)
-    (function animateRing() {
-        rx += (mx - rx) * 0.14;
-        ry += (my - ry) * 0.14;
-        ring.style.left = rx + 'px';
-        ring.style.top = ry + 'px';
-        requestAnimationFrame(animateRing);
-    })();
-})();
 
 
 /* ════════════════════════════════════════════════
-   3. NEURAL CANVAS (mouse-reactive)
+   3. NEURAL CANVAS (mouse-reactive background)
    ════════════════════════════════════════════════ */
 (function () {
     const canvas = document.getElementById('neural-canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let W, H, nodes = [];
 
@@ -129,11 +95,7 @@
     const MOUSE_FORCE = 0.4;
 
     let mouse = { x: -9999, y: -9999 };
-
-    document.addEventListener('mousemove', e => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
+    document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
     function resize() {
         W = canvas.width = window.innerWidth;
@@ -159,8 +121,6 @@
 
         nodes.forEach(n => {
             n.pulse += 0.02;
-
-            // Mouse repulsion
             const dx = n.x - mouse.x;
             const dy = n.y - mouse.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
@@ -169,22 +129,16 @@
                 n.vx += (dx / dist) * force;
                 n.vy += (dy / dist) * force;
             }
-
-            // Damping
             n.vx *= 0.995;
             n.vy *= 0.995;
-
-            // Clamp speed
             const speed = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
             if (speed > 1.2) { n.vx = (n.vx / speed) * 1.2; n.vy = (n.vy / speed) * 1.2; }
-
             n.x += n.vx;
             n.y += n.vy;
             if (n.x < 0 || n.x > W) n.vx *= -1;
             if (n.y < 0 || n.y > H) n.vy *= -1;
         });
 
-        // Connections
         for (let i = 0; i < nodes.length; i++) {
             for (let j = i + 1; j < nodes.length; j++) {
                 const dx = nodes[i].x - nodes[j].x;
@@ -202,7 +156,6 @@
             }
         }
 
-        // Mouse glow connection burst
         nodes.forEach(n => {
             const dx = n.x - mouse.x;
             const dy = n.y - mouse.y;
@@ -210,19 +163,16 @@
             if (dist < MOUSE_RADIUS) {
                 const alpha = (1 - dist / MOUSE_RADIUS) * 0.35;
                 ctx.beginPath();
-                ctx.moveTo(n.x, n.y);
-                ctx.lineTo(mouse.x, mouse.y);
+                ctx.moveTo(n.x, n.y); ctx.lineTo(mouse.x, mouse.y);
                 ctx.strokeStyle = `rgba(${CYAN}, ${alpha})`;
-                ctx.lineWidth = 0.9;
-                ctx.stroke();
+                ctx.lineWidth = 0.9; ctx.stroke();
             }
         });
 
-        // Draw nodes
         nodes.forEach(n => {
-            const pulseFactor = 0.3 + 0.2 * Math.sin(n.pulse);
+            const pf = 0.3 + 0.2 * Math.sin(n.pulse);
             ctx.beginPath();
-            ctx.arc(n.x, n.y, n.r + pulseFactor, 0, Math.PI * 2);
+            ctx.arc(n.x, n.y, n.r + pf, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(${CYAN}, 0.55)`;
             ctx.fill();
         });
@@ -231,9 +181,7 @@
     }
 
     window.addEventListener('resize', () => { resize(); spawnNodes(); });
-    resize();
-    spawnNodes();
-    draw();
+    resize(); spawnNodes(); draw();
 })();
 
 
@@ -245,7 +193,8 @@ const ROLES = [
     'Computer Vision Researcher',
     'Deep Learning Architect',
     'NLP Systems Builder',
-    'RAG Systems Developer',
+    'Generative AI Developer',
+    'RAG Systems Engineer',
 ];
 let roleIdx = 0, charIdx = 0, deleting = false;
 const typedEl = document.getElementById('typed-role');
@@ -285,7 +234,6 @@ function typeStep() {
 function scheduleGlitch() {
     const name = document.getElementById('hero-name');
     if (!name) return;
-
     function doGlitch() {
         name.classList.add('glitching');
         setTimeout(() => name.classList.remove('glitching'), 500);
@@ -303,7 +251,7 @@ window.addEventListener('scroll', () => {
     if (!progressBar) return;
     const scrolled = window.scrollY;
     const total = document.body.scrollHeight - window.innerHeight;
-    progressBar.style.width = (scrolled / total * 100) + '%';
+    if (total > 0) progressBar.style.width = (scrolled / total * 100) + '%';
 }, { passive: true });
 
 
@@ -322,9 +270,15 @@ window.addEventListener('scroll', () => {
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
 if (burger && mobileMenu) {
-    burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    burger.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open);
+    });
     mobileMenu.querySelectorAll('.mob-link').forEach(l =>
-        l.addEventListener('click', () => mobileMenu.classList.remove('open'))
+        l.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+        })
     );
 }
 
@@ -346,15 +300,13 @@ window.addEventListener('scroll', () => {
 
 
 /* ════════════════════════════════════════════════
-   10. SCROLL REVEAL (multi-type)
+   10. SCROLL REVEAL
    ════════════════════════════════════════════════ */
 const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             revealObserver.unobserve(entry.target);
-
-            // Trigger cert bars
             if (entry.target.classList.contains('cert-card')) {
                 entry.target.classList.add('bar-animated');
             }
@@ -382,7 +334,7 @@ const counterObserver = new IntersectionObserver(entries => {
         function update(now) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
             const value = target * eased;
             el.textContent = decimals > 0
                 ? value.toFixed(decimals)
@@ -398,24 +350,9 @@ document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el))
 
 
 /* ════════════════════════════════════════════════
-   12. 3D CARD TILT
+   12. (REMOVED) 3D Card Tilt
+   CHANGE 5: Tilt animation removed from project cards, cert cards, stat cards
    ════════════════════════════════════════════════ */
-document.querySelectorAll('.project-card, .cert-card, .stat-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rotX = (cy - y) / 22;
-        const rotY = (x - cx) / 22;
-        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-    });
-});
 
 
 /* ════════════════════════════════════════════════
@@ -432,9 +369,7 @@ const skillObserver = new IntersectionObserver(entries => {
             setTimeout(() => {
                 tag.style.opacity = '';
                 tag.style.transform = '';
-                setTimeout(() => {
-                    tag.style.transition = '';
-                }, 350 + i * 45);
+                setTimeout(() => { tag.style.transition = ''; }, 350 + i * 45);
             }, 50);
         });
         skillObserver.unobserve(entry.target);
@@ -452,46 +387,67 @@ window.addEventListener('scroll', () => {
     if (backBtn) backBtn.classList.toggle('show', window.scrollY > 600);
 }, { passive: true });
 if (backBtn) {
-    backBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
 
 /* ════════════════════════════════════════════════
-   15. HERO PARALLAX (subtle)
+   15. HERO PARALLAX (subtle orb movement)
    ════════════════════════════════════════════════ */
 window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+    const sy = window.scrollY;
     const orb1 = document.querySelector('.hero-orb-1');
     const orb2 = document.querySelector('.hero-orb-2');
-    if (orb1) orb1.style.transform = `translate(${scrollY * 0.06}px, ${scrollY * 0.04}px)`;
-    if (orb2) orb2.style.transform = `translate(${-scrollY * 0.04}px, ${scrollY * 0.06}px)`;
+    if (orb1) orb1.style.transform = `translate(${sy * 0.06}px, ${sy * 0.04}px)`;
+    if (orb2) orb2.style.transform = `translate(${-sy * 0.04}px, ${sy * 0.06}px)`;
 }, { passive: true });
 
 
 /* ════════════════════════════════════════════════
-   16. CONTACT FORM → FastAPI
+   16. CONTACT FORM → FastAPI /api/contact
+   CHANGE 7: Fixed — uses getElementById instead of form.fieldname
+             Robust status display and error handling
    ════════════════════════════════════════════════ */
-const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
-const submitBtn = document.getElementById('submit-btn');
-const btnText = document.getElementById('btn-text');
+(function () {
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
 
-if (form) {
+    if (!form) return;
+
+    function showStatus(message, type) {
+        statusEl.textContent = message;
+        statusEl.className = 'form-status ' + type;
+        statusEl.style.display = 'block';
+    }
+
+    function hideStatus() {
+        statusEl.style.display = 'none';
+        statusEl.className = 'form-status';
+    }
+
     form.addEventListener('submit', async e => {
         e.preventDefault();
+        hideStatus();
+
+        // CHANGE 7: Use getElementById — avoids form.name conflict
+        const name = document.getElementById('cf-name').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const subject = document.getElementById('cf-subject').value.trim();
+        const message = document.getElementById('cf-message').value.trim();
+
+        // Client-side validation
+        if (!name) { showStatus('✗ Please enter your name.', 'error'); return; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showStatus('✗ Please enter a valid email address.', 'error'); return;
+        }
+        if (!message) { showStatus('✗ Please enter a message.', 'error'); return; }
+
         submitBtn.disabled = true;
         btnText.textContent = 'Sending...';
-        status.className = 'form-status';
-        status.style.display = 'none';
 
-        const payload = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            subject: form.subject.value.trim(),
-            message: form.message.value.trim(),
-        };
+        const payload = { name, email, subject, message };
 
         try {
             const res = await fetch('/api/contact', {
@@ -499,24 +455,28 @@ if (form) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
             });
-            const data = await res.json();
-            if (res.ok && data.success) {
-                status.textContent = '✓ ' + data.message;
-                status.className = 'form-status success';
+
+            let data = {};
+            try { data = await res.json(); } catch (_) { /* non-JSON response */ }
+
+            if (res.ok) {
+                showStatus('✓ Message sent! I\'ll get back to you soon.', 'success');
                 form.reset();
+                // Scroll status into view on mobile
+                statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
-                throw new Error(data.detail || 'Something went wrong.');
+                const errMsg = data.detail || data.message || `Server error (${res.status}). Please try emailing directly.`;
+                showStatus('✗ ' + errMsg, 'error');
             }
         } catch (err) {
-            status.textContent = '✗ ' + (err.message || 'Failed. Please email directly.');
-            status.className = 'form-status error';
+            // Network error or fetch failed
+            showStatus('✗ Could not connect to server. Please email anitkumarmaity1@gmail.com directly.', 'error');
         } finally {
             submitBtn.disabled = false;
             btnText.textContent = 'Send Message';
-            status.style.display = 'block';
         }
     });
-}
+})();
 
 
 /* ════════════════════════════════════════════════
