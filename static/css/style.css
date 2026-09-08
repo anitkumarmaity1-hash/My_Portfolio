@@ -1029,6 +1029,42 @@ strong {
     margin-bottom: 0;
 }
 
+/* CHANGE 12: Project-experience bullet list + toolkit line inside About */
+.about-list {
+    list-style: none;
+    margin: 0 0 1.2rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.about-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.about-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+}
+
+.about-toolkit {
+    font-family: var(--font-mono);
+    font-size: 0.85rem !important;
+    line-height: 1.9 !important;
+    color: var(--text-dim);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+}
+
 /* ─── TIMELINE (Education) ─── 
 .edu-timeline {
      inherits from about section 
@@ -1208,30 +1244,20 @@ strong {
     cursor: default;
 }
 
-.tag:hover {
-    background: rgba(0, 212, 255, 0.06);
-    border-color: rgba(0, 212, 255, 0.2);
+/* CHANGE 10: Sub-skill tags stay dim by default (including former
+   "tag-hot" tags) and only light up together when the whole
+   skill-group block is hovered — the heading (.sg-title) stays
+   highlighted at all times regardless of hover state. */
+.skill-group:hover .tag {
+    background: var(--cyan-dim);
+    border-color: rgba(0, 212, 255, 0.22);
     color: var(--cyan);
     transform: translateY(-1px);
 }
 
 .tag-hot {
-    background: var(--cyan-dim);
-    border-color: rgba(0, 212, 255, 0.22);
-    color: var(--cyan);
-    animation: tagPulse 3s ease-in-out infinite;
-}
-
-@keyframes tagPulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
-    }
-
-    50% {
-        box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.08);
-    }
+    /* No longer highlighted by default — highlighting now happens
+       on .skill-group hover, uniformly across all tags. */
 }
 
 /* ─── PROJECTS ─── */
@@ -1369,18 +1395,57 @@ strong {
     border-color: rgba(0, 255, 170, 0.2);
 }
 
+/* CHANGE 11: Title row — project title on the left, a
+   "Technical Writing & Documentation" badge pinned to the
+   above-right corner, linking to the project's case-study PDF. */
+.proj-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+
 .proj-title {
     font-family: var(--font-mono);
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 0.3rem;
     line-height: 1.4;
     transition: color 0.2s;
 }
 
 .project-card:hover .proj-title {
     color: var(--cyan);
+}
+
+.proj-doc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    padding: 0.32rem 0.7rem;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-h);
+    color: var(--text-dim);
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.proj-doc-badge .pdb-icon {
+    opacity: 0.75;
+}
+
+.proj-doc-badge:hover {
+    background: var(--cyan-dim);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    transform: translateY(-1px);
 }
 
 .proj-org {

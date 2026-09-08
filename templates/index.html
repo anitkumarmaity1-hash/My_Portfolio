@@ -141,26 +141,36 @@
                 <h2 class="section-title">About</h2>
             </div>
             <div class="about-text-full reveal-up">
-                <p>I am an <strong>MCA graduate</strong> from Pondicherry University with a deep passion for machine
-                    learning research and applied AI. My journey started with a <strong>B.Sc. Mathematics
-                        (Hons.)</strong>
-                    from Vidyasagar University, which gave me the rigorous mathematical foundation I rely on daily —
-                    linear
-                    algebra, calculus, statistics, and probability theory.</p>
-                <p>I specialise in <strong>Deep Learning, Computer Vision, and NLP</strong> — from training
-                    encoder-decoder
-                    segmentation networks on multispectral satellite imagery to deploying real-time accent
-                    classification
-                    systems on Hugging Face. I am passionate about applying AI to solve real-world problems and
-                    continuously
-                    learning new technologies.</p>
-                <p>Currently architecting a <strong>RAG-based Medical Chatbot</strong> using LangChain, FastAPI,
-                    FAISS, and PostgreSQL — bridging research and production engineering. I have hands-on experience
-                    with
-                    <strong>NumPy, Pandas, PyTorch, TensorFlow</strong>, and the full ML pipeline from data wrangling
-                    through
-                    model deployment.
-                </p>
+                <p>I'm a <strong>Data Scientist</strong> with a Mathematics background and an MCA, focused on turning
+                    data into predictive and intelligent solutions.</p>
+                <p>My core interests are <strong>Machine Learning, Deep Learning, Data Analysis, and Generative
+                        AI</strong>. I enjoy working across the complete data-to-model pipeline — understanding the
+                    data, engineering useful features, building and comparing models, evaluating performance, and
+                    turning the result into a usable application.</p>
+                <p>My project experience includes:</p>
+                <ul class="about-list">
+                    <li>Built a mineral-region segmentation system using large-scale Landsat-8 multispectral data,
+                        where I analyzed a severe 2,509:1 class imbalance, benchmarked U-Net, Attention U-Net and
+                        ResUNet, and achieved 95.11% F1 and 90.67% IoU with the best model.</li>
+                    <li>Built an audio classification system using 1,164 speech samples and multiple acoustic
+                        feature sets, compared several ML/DL approaches, and deployed a CNN model achieving 97%
+                        accuracy.</li>
+                    <li>Built an RBAC-based medical RAG system over 9 medical textbooks and 88K+ indexed chunks,
+                        combining dense retrieval, PubMedBERT embeddings, BM25 and reranking.</li>
+                    <li>Built VideoMind, a multimodal Video RAG system that combines ASR transcripts and visual
+                        retrieval to answer questions about video content with timestamp-grounded evidence.</li>
+                </ul>
+                <p>These projects have also given me practical exposure to technologies increasingly relevant to
+                    modern Data Science roles, including <strong>Generative AI, RAG, vector databases, LLM
+                        evaluation, multimodal AI, FastAPI</strong> and <strong>MongoDB</strong>.</p>
+                <p class="about-toolkit"><span class="mono-label">Toolkit//</span> Python · SQL · Pandas · NumPy ·
+                    Scikit-learn · PyTorch · TensorFlow · Machine Learning · Deep Learning · NLP · Computer Vision ·
+                    RAG · Generative AI · Pinecone · BM25/RRF · FastAPI · MongoDB</p>
+                <p>I'm currently looking for opportunities as a <strong>Data Scientist / ML-focused Data
+                        Scientist</strong> where I can apply strong analytical and machine-learning foundations while
+                    continuing to work with modern AI technologies.</p>
+                <p>If you're working on interesting problems involving data, machine learning, or AI, I'd be happy to
+                    connect and exchange ideas.</p>
             </div>
 
             <!-- ▓▓▓ EDUCATION ▓▓▓
@@ -387,29 +397,32 @@
                         </div>
                         <span class="proj-badge">Published · Hugging Face</span>
                     </div>
-                    <h3 class="proj-title">Accent-Based Regional Origin Identification</h3>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">Accent-Based Regional Origin Identification</h3>
+                        <a href="/static/docs/accent_classifier_case_study.pdf" target="_blank" class="proj-doc-badge">
+                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
+                        </a>
+                    </div>
                     <p class="proj-org">Pondicherry University</p>
                     <p class="proj-desc">Developed a multiclass accent classification system by extracting and
                         temporally
                         aligning 7 speech features — MFCC, Mel-spectrogram, Spectral Contrast, Chroma, ZCR, RMS, and
                         Tonnetz —
-                        from 1,164 audio samples. Created a robust dataset and designed an evaluation pipeline for
-                        comparing
-                        multiple model architectures.</p>
+                        from 1,164 self-collected audio samples covering Kerala and Tamil Nadu English speech.
+                        Created a robust dataset and designed an evaluation pipeline for comparing multiple model
+                        architectures.</p>
                     <p class="proj-desc">Benchmarked 5 architectures (SVM, Logistic Regression, ANN, 1D-CNN, 2D-CNN)
                         with
-                        regularisation, data augmentation, and class weighting. The optimised 4-block 2D-CNN achieved
-                        <strong>97% test accuracy</strong>, outperforming traditional ML baselines by over 4 percentage
-                        points.
-                        Applied class balancing and regularisation to improve generalisation and reduce overfitting
-                        during
-                        deployment.
+                        regularisation, data augmentation, and class weighting. The optimised 4-block 2D-CNN over
+                        stacked spectrogram-like tensors achieved <strong>97.4% test accuracy</strong> with a 0.99
+                        ROC-AUC, evaluated on a held-out, stratified 20% split of unseen speakers — outperforming
+                        the SVM (90%) and ANN (93%) baselines.
                     </p>
                     <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">97%</span><span class="metric-key">Test Accuracy
+                        <div class="metric"><span class="metric-val">97.4%</span><span class="metric-key">Test Accuracy
                                 (2D-CNN)</span></div>
-                        <div class="metric"><span class="metric-val">92–93%</span><span class="metric-key">Baseline
-                                Models (SVM/ANN)</span></div>
+                        <div class="metric"><span class="metric-val">0.99</span><span class="metric-key">ROC-AUC
+                                Score</span></div>
                         <div class="metric"><span class="metric-val">5</span><span class="metric-key">Architectures
                                 Benchmarked</span></div>
                         <div class="metric"><span class="metric-val">1,164</span><span class="metric-key">Audio
@@ -418,14 +431,16 @@
                                 Aligned</span></div>
                     </div>
                     <div class="proj-tags">
-                        <span>Python</span><span>PyTorch</span><span>2D-CNN</span><span>Audio Processing</span>
-                        <span>MFCC</span><span>Mel-spectrogram</span><span>Scikit-learn</span><span>Hugging Face</span>
+                        <span>Python</span><span>TensorFlow / Keras</span><span>2D-CNN</span><span>Librosa</span>
+                        <span>MFCC</span><span>Mel-spectrogram</span><span>Scikit-learn</span><span>Gradio</span>
+                        <span>Hugging Face</span>
                     </div>
                     <div class="proj-actions">
+                        <a href="https://github.com/anitkumarmaity1-hash/accent-classifier-cnn" target="_blank"
+                            class="proj-link">Source Code on GitHub ↗</a>
                         <a href="https://huggingface.co/spaces/anit99/Accent_Classifier_CNN_2D/tree/main"
                             target="_blank" class="proj-link">Live Demo on Hugging Face
                             ↗</a>
-                        <!-- Replace # with actual report path, e.g. /static/docs/accent_report.pdf -->
                         <a href="/static/docs/accent_report.pdf" target="_blank" class="proj-report-link">Project
                             Report</a>
                     </div>
@@ -441,28 +456,31 @@
                         </div>
                         <span class="proj-badge">Research · Geospatial AI</span>
                     </div>
-                    <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
+                        <a href="/static/docs/mineral_prospectivity_case_study.pdf" target="_blank" class="proj-doc-badge">
+                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
+                        </a>
+                    </div>
                     <p class="proj-org">Pondicherry University</p>
                     <p class="proj-desc">Engineered an end-to-end semantic segmentation pipeline for mineralisation
                         mapping
-                        over Salem District (9,561 km²) using Landsat-8 satellite imagery (7 spectral bands, 30 m
-                        resolution).
-                        Applied PCA reduction (97.68% variance retained, 3 components) and 15-channel multi-source
-                        geospatial
-                        feature fusion.</p>
-                    <p class="proj-desc">Resolved a severe <strong>2,509:1 class imbalance</strong> via 10× mineral
-                        augmentation
-                        and a Weighted BCE + Dice loss combination. Independently designed and comparatively trained
-                        three
-                        encoder-decoder architectures (UNet, Attention UNet, ResUNet) using the AdamW optimiser.
-                        Identified
+                        over Salem District (9,561 km², 5.79M valid pixels) using Landsat-8 satellite imagery (7
+                        spectral bands, 30 m resolution). Applied PCA reduction (97.68% variance retained, 3
+                        components) and up to 15-channel multi-source geospatial feature fusion across five tested
+                        input configurations.</p>
+                    <p class="proj-desc">Resolved a severe <strong>2,509:1 class imbalance</strong> (2,309 labelled
+                        mineral pixels out of 5.79M) via a Weighted BCE (pos_weight=45) + Dice loss combination.
+                        Independently designed and comparatively trained three
+                        encoder-decoder architectures (U-Net, Attention U-Net, ResUNet) using the AdamW optimiser
+                        with early stopping on validation IoU. Identified
                         ResUNet-15ch as the most operationally effective model, achieving the highest mineral recall
                         (92.42%)
                         critical for geological survey applications.</p>
                     <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">90.67%</span><span class="metric-key">UNet IoU
+                        <div class="metric"><span class="metric-val">90.67%</span><span class="metric-key">U-Net IoU
                                 Score</span></div>
-                        <div class="metric"><span class="metric-val">95.11%</span><span class="metric-key">UNet F1
+                        <div class="metric"><span class="metric-val">95.11%</span><span class="metric-key">U-Net F1
                                 Score</span></div>
                         <div class="metric"><span class="metric-val">92.42%</span><span class="metric-key">ResUNet
                                 Recall (Best)</span></div>
@@ -475,16 +493,15 @@
                     </div>
                     <div class="proj-highlight">
                         <strong>Geological survey insight:</strong> ResUNet-15ch selected as the operationally superior
-                        model —
-                        highest mineral recall (92.42%) minimises missed detections in field survey contexts.
+                        model — under extreme imbalance, a missed deposit costs far more than a false alarm, and
+                        highest mineral recall (92.42%) minimises those missed detections in field survey contexts.
                     </div>
                     <div class="proj-tags">
-                        <span>PyTorch</span><span>UNet</span><span>Attention UNet</span><span>ResUNet</span>
+                        <span>PyTorch</span><span>U-Net</span><span>Attention U-Net</span><span>ResUNet</span>
                         <span>Landsat-8</span><span>PCA</span><span>Geospatial AI</span><span>Semantic
                             Segmentation</span>
                     </div>
                     <div class="proj-actions">
-                        <!-- Replace # with your actual GitHub repo URL -->
                         <a href="https://github.com/anitkumarmaity1-hash/Minerals_Prospective_Mapping" target="_blank"
                             class="proj-link">Source Code on GitHub ↗</a>
                         <a href="/static/docs/mineral_report.pdf" target="_blank" class="proj-report-link">Project
@@ -492,46 +509,153 @@
                     </div>
                 </article>
 
-                <!-- PROJECT 3: Medical Chatbot -->
-                <article class="project-card project-active reveal-up" style="--delay:0.2s">
+                <!-- PROJECT 3: MediAssist — RBAC Medical RAG Chatbot -->
+                <article class="project-card reveal-up" style="--delay:0.2s">
                     <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">03</span>
                             <span class="proj-period">Apr 2026 – Present</span>
                         </div>
-                        <span class="proj-badge proj-badge-live">🟢 In Progress</span>
+                        <span class="proj-badge">RBAC · Security-Audited RAG</span>
                     </div>
-                    <h3 class="proj-title">RAG-Based Medical Chatbot</h3>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">MediAssist — RBAC-Based Medical RAG Chatbot</h3>
+                        <a href="/static/docs/mediassist_technical_overview.pdf" target="_blank" class="proj-doc-badge">
+                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
+                        </a>
+                    </div>
                     <p class="proj-org">Personal Project</p>
-                    <p class="proj-desc">Developing a Retrieval-Augmented Generation (RAG) healthcare chatbot using
-                        Python,
-                        FastAPI, and LangChain. Integrates LLM-powered context-aware response generation over a
-                        domain-specific
-                        medical knowledge base, enabling accurate and grounded answers.</p>
-                    <p class="proj-desc">Implementing <strong>vector embedding</strong> and <strong>FAISS-based document
-                            retrieval</strong> pipelines alongside advanced prompt engineering. Designing a scalable
-                        backend
-                        infrastructure using PostgreSQL and Docker to optimise retrieval latency and answer accuracy.
-                    </p>
+                    <p class="proj-desc">Built a role-based-access-control medical chatbot on a hybrid retrieval
+                        RAG pipeline indexing <strong>88,195 chunks in Pinecone</strong> across 9 medical textbooks,
+                        embedded with PubMedBERT. Retrieval fuses full-corpus BM25 reranking with vector search
+                        using true Reciprocal Rank Fusion, and every retrieved chunk is filtered by the caller's
+                        role — Doctor, Nurse, or Admin — before generation.</p>
+                    <p class="proj-desc">The Groq · Llama 3.3 70B generation step emits explicit REASONING and
+                        FINAL_ANSWER markers so clinicians can audit how an answer was reached, and a live
+                        LLM-as-judge scores every answer for faithfulness against retrieved context, triggering one
+                        capped regeneration on failure. Hardened through a full security &amp; architecture audit —
+                        <strong>14 revisions</strong> covering JWT refresh-token role re-verification, a
+                        path-traversal fix on the upload endpoint, secret rotation with <code>git filter-repo</code>,
+                        and a GitHub Actions CI/CD gate (lint → tests → Docker build → deploy).</p>
                     <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">FAISS</span><span class="metric-key">Vector
-                                Retrieval</span></div>
-                        <div class="metric"><span class="metric-val">RAG</span><span class="metric-key">Architecture
-                                Pattern</span></div>
-                        <div class="metric"><span class="metric-val">Docker</span><span class="metric-key">Containerised
-                                Deploy</span></div>
-                        <div class="metric"><span class="metric-val">LangChain</span><span class="metric-key">LLM
-                                Orchestration</span></div>
+                        <div class="metric"><span class="metric-val">88,195</span><span class="metric-key">Chunks
+                                Indexed in Pinecone</span></div>
+                        <div class="metric"><span class="metric-val">3</span><span class="metric-key">RBAC Roles</span>
+                        </div>
+                        <div class="metric"><span class="metric-val">14</span><span class="metric-key">Audit-Driven
+                                Revisions</span></div>
+                        <div class="metric"><span class="metric-val">BM25→RRF</span><span class="metric-key">Hybrid
+                                Rerank</span></div>
                     </div>
                     <div class="proj-tags">
-                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>FAISS</span>
-                        <span>PostgreSQL</span><span>Docker</span><span>RAG</span><span>Prompt Engineering</span>
+                        <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>PubMedBERT</span>
+                        <span>BM25 / RRF</span><span>Groq · Llama 3.3 70B</span><span>MongoDB Atlas</span>
+                        <span>Docker</span><span>JWT</span><span>GitHub Actions CI/CD</span>
                     </div>
                     <div class="proj-actions">
-                        <a href="" target="_blank" class="proj-link">available on completion</a>
-                        <!-- Report will be added once project is complete -->
-                        <span class="proj-wip-note">Report available on completion</span>
+                        <a href="https://github.com/anitkumarmaity1-hash/medical-assistant" target="_blank"
+                            class="proj-link">Source Code on GitHub ↗</a>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4: VideoMind — Multimodal Video RAG -->
+                <article class="project-card reveal-up" style="--delay:0.3s">
+                    <div class="proj-scanline"></div>
+                    <div class="proj-head">
+                        <div>
+                            <span class="proj-index">04</span>
+                            <span class="proj-period">2026</span>
+                        </div>
+                        <span class="proj-badge">Solo Build · Multimodal RAG</span>
+                    </div>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">VideoMind — Multimodal Video Question-Answering</h3>
+                        <a href="/static/docs/videomind_case_study.pdf" target="_blank" class="proj-doc-badge">
+                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
+                        </a>
+                    </div>
+                    <p class="proj-org">Personal Project</p>
+                    <p class="proj-desc">Built a multimodal video question-answering system that retrieves both
+                        what was said and what was shown. Videos are ingested via yt-dlp, audio is transcribed with
+                        faster-whisper / Groq ASR, and sampled frames are dual-indexed — transcript chunks into a
+                        384-dim BGE text index, frames into a 512-dim CLIP ViT-B/32 visual index, both in Pinecone
+                        under one <code>video_id</code>.</p>
+                    <p class="proj-desc">Each query fuses both indexes at a tuned 0.6 text / 0.4 visual weighting,
+                        reranks by timestamp proximity, and a Groq LLM answers under a "cite only supplied evidence"
+                        prompt, linking back to the exact timestamp the answer came from. Hardened after real-load
+                        testing — a FastAPI lifespan hook pre-loads the embedding model to fix a cold-start race
+                        with Streamlit's status poller, a sliding-window rate limiter keeps requests under Groq's
+                        TPM budget, and swappable <code>StorageBackend</code> / <code>LLMProvider</code>
+                        abstractions make the deployment target config-driven, not hardcoded.</p>
+                    <div class="proj-metrics">
+                        <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
+                                Modalities Fused</span></div>
+                        <div class="metric"><span class="metric-val">384 / 512</span><span class="metric-key">Text /
+                                Visual Embedding Dims</span></div>
+                        <div class="metric"><span class="metric-val">0.6 / 0.4</span><span class="metric-key">Text–Visual
+                                Fusion Weighting</span></div>
+                        <div class="metric"><span class="metric-val">34</span><span class="metric-key">Automated
+                                Tests in CI</span></div>
+                    </div>
+                    <div class="proj-tags">
+                        <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>Groq · Llama
+                            3.3 70B</span><span>faster-whisper</span><span>CLIP ViT-B/32</span><span>BGE
+                            Embeddings</span><span>yt-dlp</span><span>Docker</span><span>GitHub Actions CI</span>
+                    </div>
+                    <div class="proj-actions">
+                        <a href="https://github.com/anitkumarmaity1-hash/VideoMind" target="_blank"
+                            class="proj-link">Source Code on GitHub ↗</a>
+                    </div>
+                </article>
+
+                <!-- PROJECT 5: Message Notification Router -->
+                <article class="project-card reveal-up" style="--delay:0.4s">
+                    <div class="proj-scanline"></div>
+                    <div class="proj-head">
+                        <div>
+                            <span class="proj-index">05</span>
+                            <span class="proj-period">Aug 2026</span>
+                        </div>
+                        <span class="proj-badge">Hackathon · 24hr Solo Build</span>
+                    </div>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">Message Notification Router</h3>
+                        <a href="/static/docs/message_router_case_study.pdf" target="_blank" class="proj-doc-badge">
+                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
+                        </a>
+                    </div>
+                    <p class="proj-org">HackerRank Orchestrate — 24-Hour Hackathon</p>
+                    <p class="proj-desc">Built a personalized, multimodal triage system for WhatsApp messages in a
+                        24-hour hackathon, deciding whether each message should notify, go to a digest, or be muted.
+                        Messages are normalised to plain text regardless of modality — EasyOCR for images,
+                        int8-quantized faster-whisper for voice notes — then matched against the recipient's quiet
+                        hours, engagement history, and sender verification / opt-out status using
+                        sentence-transformer embedding retrieval.</p>
+                    <p class="proj-desc">A three-tier decision pipeline resolves <strong>45% of the 110-message
+                            evaluation set</strong> with conservative rules before touching a model, routes the rest
+                        through a Groq Llama 3.3 70B → Llama 3.1 8B → local Ollama fallback chain that proactively
+                        switches ahead of rate limits, and validates every output against a strict
+                        action / message_type contract with citation-ID verification against retrieval — a
+                        deterministic fallback guarantees a valid decision even if every model tier fails.</p>
+                    <div class="proj-metrics">
+                        <div class="metric"><span class="metric-val">110/110</span><span class="metric-key">Valid
+                                Decisions Routed</span></div>
+                        <div class="metric"><span class="metric-val">45%</span><span class="metric-key">Resolved
+                                Pre-LLM</span></div>
+                        <div class="metric"><span class="metric-val">3</span><span class="metric-key">Modalities —
+                                Text / Image / Voice</span></div>
+                        <div class="metric"><span class="metric-val">3-tier</span><span class="metric-key">Model
+                                Fallback Chain</span></div>
+                    </div>
+                    <div class="proj-tags">
+                        <span>Python</span><span>Groq · Llama 3.3 70B</span><span>Llama 3.1 8B</span><span>Ollama</span>
+                        <span>sentence-transformers</span><span>faster-whisper</span><span>EasyOCR</span>
+                        <span>pandas</span><span>tiktoken</span>
+                    </div>
+                    <div class="proj-actions">
+                        <a href="https://github.com/anitkumarmaity1-hash/WhatsApp-Message-Notification-Router"
+                            target="_blank" class="proj-link">Source Code on GitHub ↗</a>
                     </div>
                 </article>
 
