@@ -67,7 +67,6 @@
             loader.style.display = 'none';
             document.body.classList.add('loaded');
             startTyping();
-            scheduleGlitch();
         }, 750);
     }, 2200);
 })();
@@ -225,21 +224,6 @@ function typeStep() {
         }
         setTimeout(typeStep, 32);
     }
-}
-
-
-/* ════════════════════════════════════════════════
-   5. HERO GLITCH
-   ════════════════════════════════════════════════ */
-function scheduleGlitch() {
-    const name = document.getElementById('hero-name');
-    if (!name) return;
-    function doGlitch() {
-        name.classList.add('glitching');
-        setTimeout(() => name.classList.remove('glitching'), 500);
-        setTimeout(doGlitch, 7000 + Math.random() * 6000);
-    }
-    setTimeout(doGlitch, 1500);
 }
 
 

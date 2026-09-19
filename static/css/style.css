@@ -639,47 +639,6 @@ strong {
     position: relative;
 }
 
-.hero-name.glitching {
-    animation: glitchText 0.5s steps(2) forwards;
-}
-
-@keyframes glitchText {
-    0% {
-        text-shadow: -3px 0 var(--red), 3px 0 var(--cyan);
-        transform: skewX(-2deg);
-    }
-
-    15% {
-        text-shadow: 3px 1px var(--red), -3px -1px var(--cyan);
-        transform: skewX(2deg) scaleY(1.01);
-        clip-path: inset(30% 0 20% 0);
-    }
-
-    30% {
-        text-shadow: -2px 0 var(--red), 2px 0 var(--cyan);
-        transform: skewX(-1deg);
-        clip-path: inset(5% 0 70% 0);
-    }
-
-    45% {
-        text-shadow: 3px 0 var(--red), -3px 0 var(--cyan);
-        transform: skewX(1deg);
-        clip-path: inset(60% 0 10% 0);
-    }
-
-    60% {
-        text-shadow: -2px -1px var(--red), 2px 1px var(--cyan);
-        transform: skewX(0deg);
-        clip-path: none;
-    }
-
-    100% {
-        text-shadow: none;
-        transform: none;
-        clip-path: none;
-    }
-}
-
 .hero-social {
     display: flex;
     gap: 0.8rem;
@@ -1276,22 +1235,6 @@ strong {
     overflow: hidden;
     transition: border-color 0.3s, box-shadow 0.3s;
     /* CHANGE 5: No transform-style or 3D - tilt removed entirely via JS */
-}
-
-.proj-scanline {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-.project-card:hover .proj-scanline {
-    opacity: 1;
-    animation: scanSweep 0.6s var(--ease) forwards;
 }
 
 @keyframes scanSweep {

@@ -60,8 +60,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">ABOUT</a></li>
-                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#certifications">CERTIFICATES</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
@@ -71,8 +71,8 @@
         </div>
         <div class="mobile-menu" id="mobile-menu">
             <a href="#about" class="mob-link">ABOUT</a>
-            <a href="#skills" class="mob-link">SKILLS</a>
             <a href="#projects" class="mob-link">PROJECTS</a>
+            <a href="#skills" class="mob-link">SKILLS</a>
             <a href="#certifications" class="mob-link">CERTIFICATES</a>
             <a href="#contact" class="mob-link">CONTACT</a>
         </div>
@@ -160,12 +160,29 @@
                     <li>Built VideoMind, a multimodal Video RAG system that combines ASR transcripts and visual
                         retrieval to answer questions about video content with timestamp-grounded evidence.</li>
                 </ul>
+                <p>I'm also currently building three end-to-end projects that push into agentic AI, large-scale data
+                    engineering, and applied statistics:</p>
+                <ul class="about-list">
+                    <li>An agentic AI operations copilot (LangGraph + FastAPI) that investigates factory-machine
+                        anomalies using PySpark-derived health metrics, PostgreSQL history, and a Pinecone/Vertex-AI
+                        RAG pipeline with Gemini-based synthesis and citations — currently ~90% complete.</li>
+                    <li>A deterministic, risk-controlled options algo-trading system on the Groww API for NIFTY /
+                        BANKNIFTY, with market-regime detection, a centralised risk engine, broker-side OCO
+                        target/stop-loss exits, and a daily-loss kill switch — currently ~40% complete.</li>
+                    <li>An end-to-end e-commerce analytics platform on ~100k real Olist orders — a SQL star-schema
+                        warehouse, RFM segmentation, statistical hypothesis testing, a simulated A/B test, and a
+                        cost-aware XGBoost churn model — currently ~40% complete.</li>
+                </ul>
                 <p>These projects have also given me practical exposure to technologies increasingly relevant to
-                    modern Data Science roles, including <strong>Generative AI, RAG, vector databases, LLM
-                        evaluation, multimodal AI, FastAPI</strong> and <strong>MongoDB</strong>.</p>
+                    modern Data Science and AI Engineering roles, including <strong>Generative AI, RAG, vector
+                        databases, LLM evaluation, multimodal AI, agentic orchestration (LangGraph), large-scale data
+                        processing (PySpark), applied statistics &amp; experimentation, FastAPI</strong> and
+                    <strong>MongoDB</strong>.
+                </p>
                 <p class="about-toolkit"><span class="mono-label">Toolkit//</span> Python · SQL · Pandas · NumPy ·
-                    Scikit-learn · PyTorch · TensorFlow · Machine Learning · Deep Learning · NLP · Computer Vision ·
-                    RAG · Generative AI · Pinecone · BM25/RRF · FastAPI · MongoDB</p>
+                    Scikit-learn · PyTorch · TensorFlow · XGBoost · Machine Learning · Deep Learning · NLP · Computer
+                    Vision · RAG · Generative AI · LangChain · LangGraph · Pinecone · BM25/RRF · PySpark ·
+                    PostgreSQL · Vertex AI / Gemini · FastAPI · Streamlit · MongoDB · Docker</p>
                 <p>I'm currently looking for opportunities as a <strong>Data Scientist / ML-focused Data
                         Scientist</strong> where I can apply strong analytical and machine-learning foundations while
                     continuing to work with modern AI technologies.</p>
@@ -283,113 +300,21 @@
         </div>
     </section>
 
-    <!-- ▓▓▓ SKILLS ▓▓▓
-       CHANGE 9: Added NumPy, Pandas; added Generative AI to domains (from updated resume)
-  ▓▓▓ -->
-    <section class="section section-alt" id="skills">
-        <div class="sec-watermark">02</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">02</p>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid reveal-up">
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">Python</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML / DL Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">PyTorch</span>
-                        <span class="tag tag-hot">TensorFlow / Keras</span>
-                        <span class="tag">Scikit-learn</span>
-                        <span class="tag">NumPy</span>
-                        <span class="tag">Pandas</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Architectures</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">CNN (1D / 2D)</span>
-                        <span class="tag">ANN</span>
-                        <span class="tag">RNN / LSTM / GRU</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">UNet / ResUNet</span>
-                        <span class="tag">Encoder–Decoder</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Domains</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">Computer Vision</span>
-                        <span class="tag tag-hot">NLP</span>
-                        <span class="tag tag-hot">Generative AI</span>
-                        <span class="tag">Remote Sensing</span>
-                        <span class="tag">Geospatial AI</span>
-                        <span class="tag tag-hot">RAG</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML Techniques</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Logistic Regression</span>
-                        <span class="tag">SVM</span>
-                        <span class="tag">Feature Engineering</span>
-                        <span class="tag">Model Evaluation</span>
-                        <span class="tag">Data Augmentation</span>
-                        <span class="tag">Class Imbalance Handling</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Tools &amp; Infra</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">FastAPI</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Git / GitHub</span>
-                        <span class="tag">VS Code</span>
-                        <span class="tag">Jupyter</span>
-                        <span class="tag">Google Colab</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Problem-Solving</span>
-                        <span class="tag">Critical Thinking</span>
-                        <span class="tag">Attention to Detail</span>
-                        <span class="tag">Collaboration</span>
-                        <span class="tag">Adaptability</span>
-                        <span class="tag">Communication</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ▓▓▓ PROJECTS ▓▓▓
        CHANGE 5: Tilt animation removed (via JS), more info added, report PDF links added
        CHANGE 9: Updated content from new resume
   ▓▓▓ -->
-    <section class="section" id="projects">
-        <div class="sec-watermark">03</div>
+    <section class="section section-alt" id="projects">
+        <div class="sec-watermark">02</div>
         <div class="container">
             <div class="section-header reveal-left">
-                <p class="section-index">03</p>
+                <p class="section-index">02</p>
                 <h2 class="section-title">Projects &amp; Research</h2>
             </div>
             <div class="projects-list">
 
                 <!-- PROJECT 1: Accent Classification -->
                 <article class="project-card reveal-up">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">01</span>
@@ -448,7 +373,6 @@
 
                 <!-- PROJECT 2: Mineral Segmentation -->
                 <article class="project-card reveal-up" style="--delay:0.1s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">02</span>
@@ -512,7 +436,6 @@
 
                 <!-- PROJECT 3: MediAssist — RBAC Medical RAG Chatbot -->
                 <article class="project-card reveal-up" style="--delay:0.2s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">03</span>
@@ -563,7 +486,6 @@
 
                 <!-- PROJECT 4: VideoMind — Multimodal Video RAG -->
                 <article class="project-card reveal-up" style="--delay:0.3s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">04</span>
@@ -614,7 +536,6 @@
 
                 <!-- PROJECT 5: Message Notification Router -->
                 <article class="project-card reveal-up" style="--delay:0.4s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">05</span>
@@ -664,7 +585,6 @@
 
                 <!-- PROJECT 6: Industrial Intelligence Agent (In Progress) -->
                 <article class="project-card reveal-up" style="--delay:0.5s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">06</span>
@@ -715,7 +635,6 @@
 
                 <!-- PROJECT 7: Options Algo-Trading Bot (In Progress) -->
                 <article class="project-card reveal-up" style="--delay:0.6s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">07</span>
@@ -754,7 +673,6 @@
 
                 <!-- PROJECT 8: E-Commerce Customer Retention & Growth Analytics Platform (In Progress) -->
                 <article class="project-card reveal-up" style="--delay:0.7s">
-                    <div class="proj-scanline"></div>
                     <div class="proj-head">
                         <div>
                             <span class="proj-index">08</span>
@@ -792,6 +710,117 @@
                         added once the project is finished.</p>
                 </article>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ▓▓▓ SKILLS ▓▓▓
+       CHANGE 9: Added NumPy, Pandas; added Generative AI to domains (from updated resume)
+  ▓▓▓ -->
+    <section class="section" id="skills">
+        <div class="sec-watermark">03</div>
+        <div class="container">
+            <div class="section-header reveal-left">
+                <p class="section-index">03</p>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid reveal-up">
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag tag-hot">Python</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML / DL Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="tag tag-hot">PyTorch</span>
+                        <span class="tag tag-hot">TensorFlow / Keras</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Architectures</h3>
+                    <div class="skill-tags">
+                        <span class="tag tag-hot">CNN (1D / 2D)</span>
+                        <span class="tag">ANN</span>
+                        <span class="tag">RNN / LSTM / GRU</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">UNet / ResUNet</span>
+                        <span class="tag">Encoder–Decoder</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Domains</h3>
+                    <div class="skill-tags">
+                        <span class="tag tag-hot">Computer Vision</span>
+                        <span class="tag tag-hot">NLP</span>
+                        <span class="tag tag-hot">Generative AI</span>
+                        <span class="tag tag-hot">Agentic AI</span>
+                        <span class="tag">Remote Sensing</span>
+                        <span class="tag">Geospatial AI</span>
+                        <span class="tag tag-hot">RAG</span>
+                        <span class="tag">Algorithmic Trading Systems</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML Techniques</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">Model Evaluation</span>
+                        <span class="tag">Data Augmentation</span>
+                        <span class="tag">Class Imbalance Handling</span>
+                        <span class="tag">Cost-Based Thresholding</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Statistics &amp; Experimentation</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Hypothesis Testing (t-test / Chi-square)</span>
+                        <span class="tag">A/B Testing</span>
+                        <span class="tag">Power &amp; Sample-Size Analysis</span>
+                        <span class="tag">Confidence Intervals</span>
+                        <span class="tag">RFM Segmentation</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Tools &amp; Infra</h3>
+                    <div class="skill-tags">
+                        <span class="tag tag-hot">FastAPI</span>
+                        <span class="tag tag-hot">LangGraph</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">Pinecone</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">Vertex AI / Gemini</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Git / GitHub</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Jupyter</span>
+                        <span class="tag">Google Colab</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Problem-Solving</span>
+                        <span class="tag">Critical Thinking</span>
+                        <span class="tag">Attention to Detail</span>
+                        <span class="tag">Collaboration</span>
+                        <span class="tag">Adaptability</span>
+                        <span class="tag">Communication</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
