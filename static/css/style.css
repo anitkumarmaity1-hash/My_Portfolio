@@ -1395,6 +1395,50 @@ strong {
     border-color: rgba(0, 255, 170, 0.2);
 }
 
+.proj-badge-progress {
+    background: var(--amber-dim);
+    color: var(--amber);
+    border-color: rgba(245, 166, 35, 0.28);
+}
+
+/* In-progress project completion bar — same visual language as the
+   certification score bars, reused here for build progress. */
+.proj-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0.2rem 0 1.1rem;
+}
+
+.proj-progress-bar-wrap {
+    flex: 1;
+    height: 2px;
+    background: rgba(245, 166, 35, 0.1);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.proj-progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--amber), rgba(245, 166, 35, 0.5));
+    border-radius: 99px;
+    transition: width 1s var(--ease) 0.2s;
+    box-shadow: 0 0 8px rgba(245, 166, 35, 0.4);
+}
+
+.project-card.bar-animated .proj-progress-bar {
+    width: var(--w);
+}
+
+.proj-progress-label {
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.06em;
+    color: var(--amber);
+    white-space: nowrap;
+}
+
 /* CHANGE 11: Title row — project title on the left, a
    "Technical Writing & Documentation" badge pinned to the
    above-right corner, linking to the project's case-study PDF. */

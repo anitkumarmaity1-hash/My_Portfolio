@@ -310,6 +310,9 @@ const revealObserver = new IntersectionObserver(entries => {
             if (entry.target.classList.contains('cert-card')) {
                 entry.target.classList.add('bar-animated');
             }
+            if (entry.target.classList.contains('project-card')) {
+                entry.target.classList.add('bar-animated');
+            }
         }
     });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });

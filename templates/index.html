@@ -458,7 +458,8 @@
                     </div>
                     <div class="proj-title-row">
                         <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
-                        <a href="/static/docs/mineral_prospectivity_case_study.pdf" target="_blank" class="proj-doc-badge">
+                        <a href="/static/docs/mineral_prospectivity_case_study.pdf" target="_blank"
+                            class="proj-doc-badge">
                             <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
                         </a>
                     </div>
@@ -537,7 +538,8 @@
                         capped regeneration on failure. Hardened through a full security &amp; architecture audit —
                         <strong>14 revisions</strong> covering JWT refresh-token role re-verification, a
                         path-traversal fix on the upload endpoint, secret rotation with <code>git filter-repo</code>,
-                        and a GitHub Actions CI/CD gate (lint → tests → Docker build → deploy).</p>
+                        and a GitHub Actions CI/CD gate (lint → tests → Docker build → deploy).
+                    </p>
                     <div class="proj-metrics">
                         <div class="metric"><span class="metric-val">88,195</span><span class="metric-key">Chunks
                                 Indexed in Pinecone</span></div>
@@ -593,7 +595,8 @@
                                 Modalities Fused</span></div>
                         <div class="metric"><span class="metric-val">384 / 512</span><span class="metric-key">Text /
                                 Visual Embedding Dims</span></div>
-                        <div class="metric"><span class="metric-val">0.6 / 0.4</span><span class="metric-key">Text–Visual
+                        <div class="metric"><span class="metric-val">0.6 / 0.4</span><span
+                                class="metric-key">Text–Visual
                                 Fusion Weighting</span></div>
                         <div class="metric"><span class="metric-val">34</span><span class="metric-key">Automated
                                 Tests in CI</span></div>
@@ -657,6 +660,136 @@
                         <a href="https://github.com/anitkumarmaity1-hash/WhatsApp-Message-Notification-Router"
                             target="_blank" class="proj-link">Source Code on GitHub ↗</a>
                     </div>
+                </article>
+
+                <!-- PROJECT 6: Industrial Intelligence Agent (In Progress) -->
+                <article class="project-card reveal-up" style="--delay:0.5s">
+                    <div class="proj-scanline"></div>
+                    <div class="proj-head">
+                        <div>
+                            <span class="proj-index">06</span>
+                            <span class="proj-period">Sep 2026 – Present</span>
+                        </div>
+                        <span class="proj-badge proj-badge-progress">In Progress · 90%</span>
+                    </div>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">Industrial Intelligence Agent — AI Operations Copilot</h3>
+                    </div>
+                    <p class="proj-org">Personal Project</p>
+                    <div class="proj-progress-wrap">
+                        <div class="proj-progress-bar-wrap">
+                            <div class="proj-progress-bar" style="--w:90%"></div>
+                        </div>
+                        <span class="proj-progress-label">90% complete</span>
+                    </div>
+                    <p class="proj-desc">Building an agentic decision-support system that investigates abnormal
+                        factory-machine behaviour and produces evidence-backed maintenance recommendations, instead
+                        of a chatbot that free-generates answers. A LangGraph agent plans which evidence a query
+                        needs and pulls it from three independent sources — PySpark-derived machine health metrics,
+                        historical PostgreSQL records, and a maintenance-document knowledge base — before Gemini
+                        (via Vertex AI) synthesises a root-cause analysis with explicit citations.</p>
+                    <p class="proj-desc">The RAG layer ships two retrieval backends behind one contract — a Pinecone +
+                        Vertex AI dense retriever for production, and a dependency-free BM25 lexical retriever that
+                        the system automatically degrades to if cloud credentials or connectivity are unavailable —
+                        so the agent never goes fully silent. Risk scoring, anomaly thresholds, and all numeric
+                        evidence are computed deterministically in code; the LLM is only allowed to interpret and
+                        explain evidence it was actually given, never invent it.</p>
+                    <div class="proj-metrics">
+                        <div class="metric"><span class="metric-val">10</span><span class="metric-key">Build Phases
+                                Completed</span></div>
+                        <div class="metric"><span class="metric-val">53</span><span class="metric-key">RAG Layer
+                                Tests Passing</span></div>
+                        <div class="metric"><span class="metric-val">62</span><span class="metric-key">Knowledge-Base
+                                Chunks Indexed</span></div>
+                        <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
+                                Backends (Dense + BM25)</span></div>
+                    </div>
+                    <div class="proj-tags">
+                        <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span>
+                        <span>PySpark</span><span>PostgreSQL</span><span>Pinecone</span><span>Vertex AI · Gemini</span>
+                        <span>BM25</span><span>Streamlit</span><span>Docker</span>
+                    </div>
+                    <p class="proj-wip-note">90% complete — GitHub source, live demo, and documentation will be
+                        added once the project is finished.</p>
+                </article>
+
+                <!-- PROJECT 7: Options Algo-Trading Bot (In Progress) -->
+                <article class="project-card reveal-up" style="--delay:0.6s">
+                    <div class="proj-scanline"></div>
+                    <div class="proj-head">
+                        <div>
+                            <span class="proj-index">07</span>
+                            <span class="proj-period">Sep 2026 – Present</span>
+                        </div>
+                        <span class="proj-badge proj-badge-progress">In Progress · 40%</span>
+                    </div>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">Options Algo-Trading System — Groww API</h3>
+                    </div>
+                    <p class="proj-org">Personal Project · Own Real-Money Account</p>
+                    <div class="proj-progress-wrap">
+                        <div class="proj-progress-bar-wrap">
+                            <div class="proj-progress-bar" style="--w:40%"></div>
+                        </div>
+                        <span class="proj-progress-label">40% complete</span>
+                    </div>
+                    <p class="proj-desc">Designing and building a deterministic, risk-controlled automated
+                        trading system for Indian index options (NIFTY / BANKNIFTY) on the Groww Trading API, for
+                        personal use on my own account rather than as a signal-selling or fund-management product.
+                        The pipeline chains market-regime detection, per-regime strategy selection, option-contract
+                        selection, and a centralised risk engine before any order reaches the broker — deliberately
+                        keeping the entry/exit decision rule-based rather than model-driven, so every trade is
+                        auditable and reproducible.</p>
+                    <p class="proj-desc">Core safety mechanisms include automatic target/stop-loss/trailing-stop
+                        exits via broker-side OCO orders, a daily-loss kill switch, position reconciliation against
+                        the broker's actual state, and a paper/live trading-mode switch that defaults to disabled so
+                        no real order can be placed accidentally during development.</p>
+                    <div class="proj-tags">
+                        <span>Python</span><span>Groww API</span><span>PostgreSQL</span><span>Redis</span>
+                        <span>FastAPI</span><span>Streamlit</span><span>Risk Engine</span><span>Docker</span>
+                    </div>
+                    <p class="proj-wip-note">40% complete — GitHub source, live demo, and documentation will be
+                        added once the project is finished.</p>
+                </article>
+
+                <!-- PROJECT 8: E-Commerce Customer Retention & Growth Analytics Platform (In Progress) -->
+                <article class="project-card reveal-up" style="--delay:0.7s">
+                    <div class="proj-scanline"></div>
+                    <div class="proj-head">
+                        <div>
+                            <span class="proj-index">08</span>
+                            <span class="proj-period">Sep 2026 – Present</span>
+                        </div>
+                        <span class="proj-badge proj-badge-progress">In Progress · 40%</span>
+                    </div>
+                    <div class="proj-title-row">
+                        <h3 class="proj-title">E-Commerce Customer Retention &amp; Growth Analytics Platform</h3>
+                    </div>
+                    <p class="proj-org">Personal Project · Olist Brazilian E-Commerce Dataset</p>
+                    <div class="proj-progress-wrap">
+                        <div class="proj-progress-bar-wrap">
+                            <div class="proj-progress-bar" style="--w:40%"></div>
+                        </div>
+                        <span class="proj-progress-label">40% complete</span>
+                    </div>
+                    <p class="proj-desc">An end-to-end analytics platform on ~100k real Olist orders, built to
+                        demonstrate the full data-scientist workflow rather than a single model. A PostgreSQL star
+                        schema (fact_orders with customer/product/seller/date dimensions) backs 15–20 business
+                        queries — RFM segmentation, cohort repeat-purchase rate, late-delivery-by-region — followed by
+                        proper hypothesis testing (t-tests, chi-square) on real relationships in the data, such as
+                        payment method vs. order value and delivery lateness vs. review score.</p>
+                    <p class="proj-desc">On top of that, a clearly-labelled simulated A/B test evaluates a
+                        retention-email intervention with random assignment, a power/sample-size justification, and a
+                        proportions test with confidence interval on the lift. The final layer trains an XGBoost
+                        churn-risk model and picks its classification threshold by cost/benefit — estimated retained
+                        revenue from targeting the highest-risk decile against the cost of the offer — rather than
+                        defaulting to 0.5, tied together in a Streamlit dashboard.</p>
+                    <div class="proj-tags">
+                        <span>PostgreSQL</span><span>SQL</span><span>Statistical Testing</span><span>A/B
+                            Testing</span><span>XGBoost</span><span>pandas</span><span>Streamlit</span>
+                    </div>
+                    <p class="proj-wip-note">40% complete — GitHub source, live demo, and documentation will be
+                        added once the project is finished.</p>
                 </article>
 
             </div>
