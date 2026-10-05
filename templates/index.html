@@ -4,972 +4,1036 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anit Kumar Maity — AI/ML Engineer</title>
+    <title>Anit Kumar Maity — AI/ML Engineer &amp; Data Scientist</title>
     <meta name="description"
-        content="MCA graduate with a strong background in Mathematics and a keen interest in AI & ML. Computer Vision · NLP · RAG · PyTorch." />
+        content="Portfolio of Anit Kumar Maity — MCA graduate with a Mathematics background, building Computer Vision, NLP, RAG and Generative AI systems with PyTorch, TensorFlow and FastAPI." />
+    <meta property="og:title" content="Anit Kumar Maity — AI/ML Engineer & Data Scientist" />
+    <meta property="og:description"
+        content="Computer Vision, NLP, RAG and Generative AI projects — from medical RAG chatbots to multimodal video Q&A and satellite-imagery segmentation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/static/img/profile.jpeg" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232B4FE0'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,300&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet" />
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- ▓▓▓ LOADER ▓▓▓ -->
-    <div id="loader">
-        <div class="ld-inner">
-            <div class="ld-logo"><span class="logo-bracket">[</span>AKM<span class="logo-bracket">]</span></div>
-            <div class="ld-lines">
-                <div class="ld-line" id="ll1">&gt; INITIALIZING NEURAL INTERFACE<span class="ld-cur">_</span></div>
-                <div class="ld-line" id="ll2">&gt; LOADING COGNITIVE MODULES<span class="ld-cur">_</span></div>
-                <div class="ld-line" id="ll3">&gt; MOUNTING PORTFOLIO v2.0<span class="ld-cur">_</span></div>
-                <div class="ld-line" id="ll4">&gt; SYSTEM READY<span class="ld-cur">_</span></div>
-            </div>
-            <div class="ld-bar-wrap">
-                <div class="ld-bar" id="ld-bar"></div>
-            </div>
-            <div class="ld-pct" id="ld-pct">0%</div>
-        </div>
-    </div>
-
-    <!-- ▓▓▓ NOISE ▓▓▓ -->
-    <div class="noise"></div>
-
-    <!-- ▓▓▓ SCROLL PROGRESS ▓▓▓ -->
-    <div id="scroll-progress"></div>
-
-    <!-- ▓▓▓ CANVAS ▓▓▓ -->
-    <canvas id="neural-canvas"></canvas>
-
-    <!-- ▓▓▓ NAV ▓▓▓
-       CHANGE 1: Logo now shows profile photo circle + brand + HOME label
-  ▓▓▓ -->
+    <!-- ▓▓▓ NAV ▓▓▓ -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a class="nav-logo" href="#home">
-                <!-- Place your photo at /static/img/profile.jpg -->
                 <div class="nav-logo-photo">
-                    <img src="/static/img/passport.jpg" alt="Anit Kumar Maity" />
-                    <span class="nav-logo-initials">AKM</span>
+                    <img src="/static/img/passport.jpg" alt="" />
                 </div>
-                <div class="nav-logo-text">
-                    <span class="nav-logo-brand"><span class="logo-bracket">[</span>AKM<span
-                            class="logo-bracket">]</span></span>
-                </div>
+                <span>Anit Maity</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#certifications">CERTIFICATES</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="nav-burger" id="burger" aria-label="Menu">
+            <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="mobile-menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            <a href="#about" class="mob-link">ABOUT</a>
-            <a href="#projects" class="mob-link">PROJECTS</a>
-            <a href="#skills" class="mob-link">SKILLS</a>
-            <a href="#certifications" class="mob-link">CERTIFICATES</a>
-            <a href="#contact" class="mob-link">CONTACT</a>
+            <a href="#about" class="mob-link">About</a>
+            <a href="#projects" class="mob-link">Projects</a>
+            <a href="#skills" class="mob-link">Skills</a>
+            <a href="#education" class="mob-link">Education</a>
+            <a href="#certifications" class="mob-link">Certifications</a>
+            <a href="#contact" class="mob-link">Contact</a>
         </div>
     </nav>
 
-    <!-- ▓▓▓ HERO ▓▓▓
-       CHANGE 2: Profile photo added above hero-name on the left column
-  ▓▓▓ -->
-    <section class="hero" id="home">
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-grid-overlay"></div>
-        <div class="hero-inner">
-            <div class="hero-left">
-                <!-- Profile photo — medium circular, above name -->
-                <div class="hero-photo-wrap">
+    <main id="main">
+        <!-- ▓▓▓ HERO ▓▓▓ -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-left">
                     <div class="hero-photo">
-                        <img src="/static/img/profile.jpeg" alt="Anit Kumar Maity" />
-                        <span class="hero-photo-initials">AKM</span>
+                        <img src="/static/img/profile.jpeg" alt="Portrait of Anit Kumar Maity" />
                     </div>
-                    <div class="hero-photo-ring"></div>
+                    <p class="hero-tag"><span class="tag-dot"></span>Open to opportunities</p>
+                    <div class="hero-social">
+                        <a href="https://github.com/anitkumarmaity1-hash" target="_blank" rel="noopener" class="hs-link"
+                            title="GitHub" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank" rel="noopener"
+                            class="hs-link" title="LinkedIn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.5 4.78 5.76V21H18v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:anitkumarmaity1@gmail.com" class="hs-link" title="Email" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m4 7 8 6 8-6" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <p class="hero-tag"><span class="tag-dot"></span>Open to opportunities</p>
-                <h2 class="hero-name" id="hero-name">ANIT KUMAR MAITY</h2>
-                <div class="hero-social">
-                    <a href="https://github.com/YOUR_USERNAME" target="_blank" class="hs-link" title="GitHub">GH</a>
-                    <a href="https://linkedin.com/in/anit-kumar-maity-41308734a" target="_blank" class="hs-link"
-                        title="LinkedIn">LI</a>
-                    <a href="mailto:anitkumarmaity1@gmail.com" class="hs-link" title="Email">EM</a>
+                <div class="hero-right">
+                    <h1 class="hero-name">Anit Kumar Maity</h1>
+                    <p class="hero-role">AI/ML Engineer &amp; Data Scientist — Computer Vision, NLP &amp; Generative
+                        AI</p>
+                    <p class="hero-desc">MCA graduate with a Mathematics (UG) background and hands-on experience in
+                        Machine Learning, Deep Learning, Computer Vision, NLP and Generative AI. I work mainly in
+                        Python with PyTorch, TensorFlow and Scikit-learn, and I've built projects in speech
+                        classification, remote-sensing image analysis and RAG-based applications — currently looking
+                        for opportunities as a Data Scientist or AI/ML Engineer.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="https://github.com/anitkumarmaity1-hash" target="_blank" rel="noopener"
+                            class="btn btn-ghost">GitHub</a>
+                        <a href="mailto:anitkumarmaity1@gmail.com" class="btn btn-ghost">Email Me</a>
+                    </div>
+                    <div class="hero-meta">
+                        <span class="hero-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                aria-hidden="true">
+                                <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" />
+                                <circle cx="12" cy="9" r="2.5" />
+                            </svg>
+                            Tamluk, Purba Medinipur, West Bengal, India
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-right">
-                <div class="hero-role-wrap">
-                    <p class="hero-role"><span id="typed-role"></span><span class="type-cursor">|</span></p>
-                    <p class="hero-sub"><em>Computer Vision · NLP · Generative AI · RAG</em></p>
-                </div>
-                <p class="hero-desc">MCA post graduated with a Mathematics(UG) background and hands-on experience in
-                    Machine Learning, Deep Learning, Computer Vision, NLP, and Generative AI. Skilled in Python and AI
-                    frameworks such as PyTorch, TensorFlow, and Scikit-learn. Built projects in speech classification,
-                    remote sensing image analysis, and RAG-based applications. Interested in applying AI and data-driven
-                    solutions to solve real-world problems and grow as a Data Scientist, AI/ML Engineer, or Generative
-                    AI Engineer.</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="mailto:anitkumarmaity1@gmail.com" class="btn btn-ghost">Get In Touch</a>
-                </div>
-                <div class="hero-meta">
-                    <span><span class="mono-label">Address//</span>Tamluk, Perba Medinipur, West Bengal, India</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <span class="scroll-line"></span>
-            <span class="scroll-text">scroll</span>
-        </div>
-    </section>
+        </section>
 
-    <!-- ▓▓▓ ABOUT ▓▓▓
-       CHANGE 3: Removed stat blocks on the right — about text now spans full width
-  ▓▓▓ -->
-    <section class="section" id="about">
-        <div class="sec-watermark">01</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">01</p>
-                <h2 class="section-title">About</h2>
+        <!-- ▓▓▓ ABOUT ▓▓▓ -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">About</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-copy reveal-up">
+                        <p>I'm an <strong>AI/ML-focused Data Scientist</strong> with a Mathematics background and an
+                            MCA from Pondicherry University. I turn data into predictive and intelligent
+                            systems — across <strong>Machine Learning, Deep Learning, Computer Vision, NLP and
+                                Generative AI</strong> — and I'm comfortable owning the full pipeline: understanding
+                            the data, engineering features, benchmarking models, evaluating them honestly, and
+                            shipping the result as a usable application.</p>
+                        <ul class="about-list">
+                            <li><strong>Mineral-region segmentation</strong> on large-scale Landsat-8 multispectral
+                                data — tackled a 2,509:1 class imbalance and benchmarked U-Net, Attention U-Net and
+                                ResUNet; best model reached 95.11% F1 and 90.67% IoU.</li>
+                            <li><strong>Audio classification</strong> on 1,164 speech samples with multiple acoustic
+                                feature sets; a deployed CNN reached 97% accuracy.</li>
+                            <li><strong>RBAC medical RAG</strong> over 9 textbooks and 88K+ chunks, combining
+                                PubMedBERT dense retrieval, BM25 and reranking.</li>
+                            <li><strong>VideoMind</strong>, a multimodal Video RAG system that fuses ASR transcripts
+                                with visual retrieval to answer questions with timestamp-grounded evidence.</li>
+                        </ul>
+                        <p>These projects have given me hands-on experience with RAG, vector databases, LLM
+                            evaluation, multimodal AI, FastAPI and MongoDB. I'm looking for
+                            <strong>AI/ML Engineer, GenAI Engineer or ML-focused Data Scientist</strong> roles where
+                            I can apply strong ML foundations to real-world AI systems — if that sounds like your
+                            team, I'd be happy to connect.
+                        </p>
+                    </div>
+                    <div class="about-card reveal-up">
+                        <h3>Currently building</h3>
+                        <ul class="about-card-list">
+                            <li>An agentic AI operations copilot (LangGraph + FastAPI) that investigates
+                                factory-machine anomalies using PySpark-derived health metrics and a Pinecone /
+                                Vertex AI RAG pipeline — about 90% complete.</li>
+                            <li>A deterministic, risk-controlled options algo-trading system on the Groww API for
+                                NIFTY / BANKNIFTY, with a centralised risk engine and broker-side OCO exits — about
+                                40% complete.</li>
+                            <li>An end-to-end e-commerce analytics platform on ~100k real Olist orders, with RFM
+                                segmentation, hypothesis testing and a cost-aware XGBoost churn model — about 40%
+                                complete.</li>
+                        </ul>
+                        <div class="about-toolkit">
+                            <p class="about-toolkit-label">Frequently used</p>
+                            <div class="skill-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">NumPy</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">Pinecone</span>
+                                <span class="tag">BM25 / RRF</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-text-full reveal-up">
-                <p>I'm a <strong>Data Scientist</strong> with a Mathematics background and an MCA, focused on turning
-                    data into predictive and intelligent solutions.</p>
-                <p>My core interests are <strong>Machine Learning, Deep Learning, Data Analysis, and Generative
-                        AI</strong>. I enjoy working across the complete data-to-model pipeline — understanding the
-                    data, engineering useful features, building and comparing models, evaluating performance, and
-                    turning the result into a usable application.</p>
-                <p>My project experience includes:</p>
-                <ul class="about-list">
-                    <li>Built a mineral-region segmentation system using large-scale Landsat-8 multispectral data,
-                        where I analyzed a severe 2,509:1 class imbalance, benchmarked U-Net, Attention U-Net and
-                        ResUNet, and achieved 95.11% F1 and 90.67% IoU with the best model.</li>
-                    <li>Built an audio classification system using 1,164 speech samples and multiple acoustic
-                        feature sets, compared several ML/DL approaches, and deployed a CNN model achieving 97%
-                        accuracy.</li>
-                    <li>Built an RBAC-based medical RAG system over 9 medical textbooks and 88K+ indexed chunks,
-                        combining dense retrieval, PubMedBERT embeddings, BM25 and reranking.</li>
-                    <li>Built VideoMind, a multimodal Video RAG system that combines ASR transcripts and visual
-                        retrieval to answer questions about video content with timestamp-grounded evidence.</li>
-                </ul>
-                <p>I'm also currently building three end-to-end projects that push into agentic AI, large-scale data
-                    engineering, and applied statistics:</p>
-                <ul class="about-list">
-                    <li>An agentic AI operations copilot (LangGraph + FastAPI) that investigates factory-machine
-                        anomalies using PySpark-derived health metrics, PostgreSQL history, and a Pinecone/Vertex-AI
-                        RAG pipeline with Gemini-based synthesis and citations — currently ~90% complete.</li>
-                    <li>A deterministic, risk-controlled options algo-trading system on the Groww API for NIFTY /
-                        BANKNIFTY, with market-regime detection, a centralised risk engine, broker-side OCO
-                        target/stop-loss exits, and a daily-loss kill switch — currently ~40% complete.</li>
-                    <li>An end-to-end e-commerce analytics platform on ~100k real Olist orders — a SQL star-schema
-                        warehouse, RFM segmentation, statistical hypothesis testing, a simulated A/B test, and a
-                        cost-aware XGBoost churn model — currently ~40% complete.</li>
-                </ul>
-                <p>These projects have also given me practical exposure to technologies increasingly relevant to
-                    modern Data Science and AI Engineering roles, including <strong>Generative AI, RAG, vector
-                        databases, LLM evaluation, multimodal AI, agentic orchestration (LangGraph), large-scale data
-                        processing (PySpark), applied statistics &amp; experimentation, FastAPI</strong> and
-                    <strong>MongoDB</strong>.
-                </p>
-                <p class="about-toolkit"><span class="mono-label">Toolkit//</span> Python · SQL · Pandas · NumPy ·
-                    Scikit-learn · PyTorch · TensorFlow · XGBoost · Machine Learning · Deep Learning · NLP · Computer
-                    Vision · RAG · Generative AI · LangChain · LangGraph · Pinecone · BM25/RRF · PySpark ·
-                    PostgreSQL · Vertex AI / Gemini · FastAPI · Streamlit · MongoDB · Docker</p>
-                <p>I'm currently looking for opportunities as a <strong>Data Scientist / ML-focused Data
-                        Scientist</strong> where I can apply strong analytical and machine-learning foundations while
-                    continuing to work with modern AI technologies.</p>
-                <p>If you're working on interesting problems involving data, machine learning, or AI, I'd be happy to
-                    connect and exchange ideas.</p>
+        </section>
+
+        <!-- ▓▓▓ PROJECTS ▓▓▓ -->
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Projects &amp; research</h2>
+                    <p class="section-sub">Eight projects — from a published accent classifier to three end-to-end
+                        systems currently in progress.</p>
+                </div>
+                <div class="projects-list">
+
+                    <!-- PROJECT 1: Accent Classification -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Jul 2025 – Nov 2025</span>
+                            <span class="proj-badge">Published · Hugging Face</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">Accent-Based Regional Origin Identification</h3>
+                            <a href="/static/docs/accent_classifier_case_study.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Case study
+                            </a>
+                        </div>
+                        <p class="proj-org">Pondicherry University</p>
+                        <p class="proj-desc">Developed a multiclass accent classification system by extracting and
+                            temporally aligning 7 speech features — MFCC, Mel-spectrogram, Spectral Contrast, Chroma,
+                            ZCR, RMS and Tonnetz — from 1,164 self-collected audio samples covering Kerala and Tamil
+                            Nadu English speech. Created a robust dataset and an evaluation pipeline for comparing
+                            multiple model architectures.</p>
+                        <p class="proj-desc">Benchmarked 5 architectures (SVM, Logistic Regression, ANN, 1D-CNN,
+                            2D-CNN) with regularisation, data augmentation and class weighting. The optimised
+                            4-block 2D-CNN over stacked spectrogram-like tensors achieved <strong>97.4% test
+                                accuracy</strong> with a 0.99 ROC-AUC, evaluated on a held-out, stratified 20% split
+                            of unseen speakers — outperforming the SVM (90%) and ANN (93%) baselines.</p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">97.4%</span><span class="metric-key">Test
+                                    accuracy (2D-CNN)</span></div>
+                            <div class="metric"><span class="metric-val">0.99</span><span class="metric-key">ROC-AUC
+                                    score</span></div>
+                            <div class="metric"><span class="metric-val">5</span><span class="metric-key">Architectures
+                                    benchmarked</span></div>
+                            <div class="metric"><span class="metric-val">1,164</span><span class="metric-key">Audio
+                                    samples</span></div>
+                            <div class="metric"><span class="metric-val">7</span><span class="metric-key">Speech
+                                    features aligned</span></div>
+                        </div>
+                        <div class="proj-tags">
+                            <span>Python</span><span>TensorFlow / Keras</span><span>2D-CNN</span><span>Librosa</span>
+                            <span>MFCC</span><span>Mel-spectrogram</span><span>Scikit-learn</span><span>Gradio</span>
+                            <span>Hugging Face</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://github.com/anitkumarmaity1-hash/accent-classifier-cnn" target="_blank"
+                                rel="noopener" class="proj-link">
+                                Source code on GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                            <a href="https://huggingface.co/spaces/anit99/Accent_Classifier_CNN_2D/tree/main"
+                                target="_blank" rel="noopener" class="proj-link">
+                                Live demo on Hugging Face
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                            <a href="/static/docs/accent_report.pdf" target="_blank" rel="noopener"
+                                class="proj-report-link">Project report</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2: Mineral Segmentation -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Jan 2026 – Apr 2026</span>
+                            <span class="proj-badge">Research · Geospatial AI</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
+                            <a href="/static/docs/mineral_prospectivity_case_study.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Case study
+                            </a>
+                        </div>
+                        <p class="proj-org">Pondicherry University</p>
+                        <p class="proj-desc">Engineered an end-to-end semantic segmentation pipeline for
+                            mineralisation mapping over Salem District (9,561 km², 5.79M valid pixels) using
+                            Landsat-8 satellite imagery (7 spectral bands, 30 m resolution). Applied PCA reduction
+                            (97.68% variance retained, 3 components) and up to 15-channel multi-source geospatial
+                            feature fusion across five tested input configurations.</p>
+                        <p class="proj-desc">Resolved a severe <strong>2,509:1 class imbalance</strong> (2,309
+                            labelled mineral pixels out of 5.79M) via a Weighted BCE (pos_weight=45) + Dice loss
+                            combination. Independently designed and comparatively trained three encoder-decoder
+                            architectures (U-Net, Attention U-Net, ResUNet) using the AdamW optimiser with early
+                            stopping on validation IoU. ResUNet-15ch was the most operationally effective model,
+                            achieving the highest mineral recall (92.42%) — critical for geological survey
+                            applications.</p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">90.67%</span><span class="metric-key">U-Net
+                                    IoU score</span></div>
+                            <div class="metric"><span class="metric-val">95.11%</span><span class="metric-key">U-Net
+                                    F1 score</span></div>
+                            <div class="metric"><span class="metric-val">92.42%</span><span class="metric-key">ResUNet
+                                    recall (best)</span></div>
+                            <div class="metric"><span class="metric-val">2509:1</span><span class="metric-key">Class
+                                    imbalance solved</span></div>
+                            <div class="metric"><span class="metric-val">3</span><span class="metric-key">Architectures
+                                    compared</span></div>
+                            <div class="metric"><span class="metric-val">9,561</span><span class="metric-key">km²
+                                    mapped</span></div>
+                        </div>
+                        <div class="proj-highlight">
+                            <strong>Geological survey insight:</strong> ResUNet-15ch was selected as the
+                            operationally superior model — under extreme imbalance, a missed deposit costs far more
+                            than a false alarm, and the highest mineral recall (92.42%) minimises those missed
+                            detections in field survey contexts.
+                        </div>
+                        <div class="proj-tags">
+                            <span>PyTorch</span><span>U-Net</span><span>Attention U-Net</span><span>ResUNet</span>
+                            <span>Landsat-8</span><span>PCA</span><span>Geospatial AI</span><span>Semantic
+                                segmentation</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://github.com/anitkumarmaity1-hash/Minerals_Prospective_Mapping"
+                                target="_blank" rel="noopener" class="proj-link">
+                                Source code on GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                            <a href="/static/docs/mineral_report.pdf" target="_blank" rel="noopener"
+                                class="proj-report-link">Project report</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3: MediAssist -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Apr 2026 – Jun 2026</span>
+                            <span class="proj-badge">RBAC · Security-audited RAG</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">MediAssist — RBAC-Based Medical RAG Chatbot</h3>
+                            <a href="/static/docs/mediassist_technical_overview.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Technical overview
+                            </a>
+                        </div>
+                        <p class="proj-org">Personal project</p>
+                        <p class="proj-desc">Built a role-based-access-control medical chatbot on a hybrid retrieval
+                            RAG pipeline indexing <strong>88,195 chunks in Pinecone</strong> across 9 medical
+                            textbooks, embedded with PubMedBERT. Retrieval fuses full-corpus BM25 reranking with
+                            vector search using true Reciprocal Rank Fusion, and every retrieved chunk is filtered by
+                            the caller's role — Doctor, Nurse or Admin — before generation.</p>
+                        <p class="proj-desc">The Groq · Llama 3.3 70B generation step emits explicit REASONING and
+                            FINAL_ANSWER markers so clinicians can audit how an answer was reached, and a live
+                            LLM-as-judge scores every answer for faithfulness against retrieved context, triggering
+                            one capped regeneration on failure. Hardened through a full security &amp; architecture
+                            audit — <strong>14 revisions</strong> covering JWT refresh-token role re-verification, a
+                            path-traversal fix on the upload endpoint, secret rotation with
+                            <code>git filter-repo</code>, and a GitHub Actions CI/CD gate (lint → tests → Docker
+                            build → deploy).
+                        </p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">88,195</span><span class="metric-key">Chunks
+                                    indexed in Pinecone</span></div>
+                            <div class="metric"><span class="metric-val">3</span><span class="metric-key">RBAC
+                                    roles</span></div>
+                            <div class="metric"><span class="metric-val">14</span><span class="metric-key">Audit-driven
+                                    revisions</span></div>
+                            <div class="metric"><span class="metric-val">BM25→RRF</span><span class="metric-key">Hybrid
+                                    rerank</span></div>
+                        </div>
+                        <div class="proj-tags">
+                            <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>PubMedBERT</span>
+                            <span>BM25 / RRF</span><span>Groq · Llama 3.3 70B</span><span>MongoDB Atlas</span>
+                            <span>Docker</span><span>JWT</span><span>GitHub Actions CI/CD</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://github.com/anitkumarmaity1-hash/medical-assistant" target="_blank"
+                                rel="noopener" class="proj-link">
+                                Source code on GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                            <a href="https://medical-assistant-web.onrender.com/" target="_blank" rel="noopener"
+                                class="proj-link">
+                                Live demo
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 4: VideoMind -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">2026</span>
+                            <span class="proj-badge">Solo build · Multimodal RAG</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">VideoMind — Multimodal Video Question-Answering</h3>
+                            <a href="/static/docs/videomind_case_study.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Case study
+                            </a>
+                        </div>
+                        <p class="proj-org">Personal project</p>
+                        <p class="proj-desc">Built a multimodal video question-answering system that retrieves both
+                            what was said and what was shown. Videos are ingested via yt-dlp, audio is transcribed
+                            with faster-whisper / Groq ASR, and sampled frames are dual-indexed — transcript chunks
+                            into a 384-dim BGE text index, frames into a 512-dim CLIP ViT-B/32 visual index, both in
+                            Pinecone under one <code>video_id</code>.</p>
+                        <p class="proj-desc">Each query fuses both indexes at a tuned 0.6 text / 0.4 visual weighting,
+                            reranks by timestamp proximity, and a Groq LLM answers under a "cite only supplied
+                            evidence" prompt, linking back to the exact timestamp the answer came from. Hardened
+                            after real-load testing — a FastAPI lifespan hook pre-loads the embedding model to fix a
+                            cold-start race with Streamlit's status poller, a sliding-window rate limiter keeps
+                            requests under Groq's TPM budget, and swappable <code>StorageBackend</code> /
+                            <code>LLMProvider</code> abstractions make the deployment target config-driven, not
+                            hardcoded.
+                        </p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
+                                    modalities fused</span></div>
+                            <div class="metric"><span class="metric-val">384 / 512</span><span class="metric-key">Text /
+                                    visual embedding dims</span></div>
+                            <div class="metric"><span class="metric-val">0.6 / 0.4</span><span
+                                    class="metric-key">Text–visual fusion weighting</span></div>
+                            <div class="metric"><span class="metric-val">34</span><span class="metric-key">Automated
+                                    tests in CI</span></div>
+                        </div>
+                        <div class="proj-tags">
+                            <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>Groq · Llama 3.3
+                                70B</span><span>faster-whisper</span><span>CLIP ViT-B/32</span><span>BGE
+                                embeddings</span><span>yt-dlp</span><span>Docker</span><span>GitHub Actions CI</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://github.com/anitkumarmaity1-hash/VideoMind" target="_blank" rel="noopener"
+                                class="proj-link">
+                                Source code on GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 5: Message Notification Router -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Aug 2026</span>
+                            <span class="proj-badge">Hackathon · 24hr solo build</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">Message Notification Router</h3>
+                            <a href="/static/docs/message_router_case_study.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Case study
+                            </a>
+                        </div>
+                        <p class="proj-org">HackerRank Orchestrate — 24-hour hackathon</p>
+                        <p class="proj-desc">Built a personalized, multimodal triage system for WhatsApp messages in
+                            a 24-hour hackathon, deciding whether each message should notify, go to a digest, or be
+                            muted. Messages are normalised to plain text regardless of modality — EasyOCR for images,
+                            int8-quantized faster-whisper for voice notes — then matched against the recipient's
+                            quiet hours, engagement history and sender verification / opt-out status using
+                            sentence-transformer embedding retrieval.</p>
+                        <p class="proj-desc">A tiered decision pipeline resolves <strong>46 of the 110 evaluation
+                                messages (42%)</strong> with conservative rules before touching a model, then routes
+                            the rest in batches of four through a Groq gpt-oss-120b → gpt-oss-20b → local Ollama
+                            (Llama 3.1 8B) fallback chain. A persisted per-model daily token-budget tracker switches
+                            tiers <em>before</em> a rate limit is hit, and every output is validated against a
+                            strict action / message_type contract with citation-ID verification against retrieval —
+                            a deterministic fallback guarantees a valid decision even if every model tier fails.</p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">110/110</span><span class="metric-key">Valid
+                                    decisions routed</span></div>
+                            <div class="metric"><span class="metric-val">42%</span><span class="metric-key">Resolved
+                                    pre-LLM</span></div>
+                            <div class="metric"><span class="metric-val">3</span><span class="metric-key">Modalities
+                                    — text / image / voice</span></div>
+                            <div class="metric"><span class="metric-val">3-tier</span><span class="metric-key">Model
+                                    fallback chain</span></div>
+                        </div>
+                        <div class="proj-tags">
+                            <span>Python</span><span>Groq · gpt-oss-120b</span><span>gpt-oss-20b</span>
+                            <span>Ollama · Llama 3.1 8B</span><span>sentence-transformers</span>
+                            <span>faster-whisper</span><span>EasyOCR</span><span>pandas</span><span>tiktoken</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a href="https://github.com/anitkumarmaity1-hash/WhatsApp-Message-Notification-Router"
+                                target="_blank" rel="noopener" class="proj-link">
+                                Source code on GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"
+                                    height="14" aria-hidden="true">
+                                    <path
+                                        d="M14 4h6v6M10 14 20 4M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 6: Industrial Intelligence Agent (In Progress) -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Sep 2026 – Present</span>
+                            <span class="proj-badge proj-badge-progress">In progress · 90%</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">Industrial Intelligence Agent — AI Operations Copilot</h3>
+                        </div>
+                        <p class="proj-org">Personal project</p>
+                        <div class="proj-progress-wrap">
+                            <div class="proj-progress-bar-wrap">
+                                <div class="proj-progress-bar" style="--w:90%"></div>
+                            </div>
+                            <span class="proj-progress-label mono">90%</span>
+                        </div>
+                        <p class="proj-desc">Building an agentic decision-support system that investigates abnormal
+                            factory-machine behaviour and produces evidence-backed maintenance recommendations,
+                            instead of a chatbot that free-generates answers. A LangGraph agent plans which evidence a
+                            query needs and pulls it from three independent sources — PySpark-derived machine health
+                            metrics, historical PostgreSQL records, and a maintenance-document knowledge base —
+                            before Gemini (via Vertex AI) synthesises a root-cause analysis with explicit citations.
+                        </p>
+                        <p class="proj-desc">The RAG layer ships two retrieval backends behind one contract — a
+                            Pinecone + Vertex AI dense retriever for production, and a dependency-free BM25 lexical
+                            retriever that the system automatically degrades to if cloud credentials or connectivity
+                            are unavailable — so the agent never goes fully silent. Risk scoring, anomaly thresholds
+                            and all numeric evidence are computed deterministically in code; the LLM is only allowed
+                            to interpret and explain evidence it was actually given, never invent it.</p>
+                        <div class="proj-metrics">
+                            <div class="metric"><span class="metric-val">10</span><span class="metric-key">Build
+                                    phases completed</span></div>
+                            <div class="metric"><span class="metric-val">53</span><span class="metric-key">RAG layer
+                                    tests passing</span></div>
+                            <div class="metric"><span class="metric-val">62</span><span
+                                    class="metric-key">Knowledge-base
+                                    chunks indexed</span></div>
+                            <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
+                                    backends (dense + BM25)</span></div>
+                        </div>
+                        <div class="proj-tags">
+                            <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span>
+                            <span>PySpark</span><span>PostgreSQL</span><span>Pinecone</span><span>Vertex AI ·
+                                Gemini</span>
+                            <span>BM25</span><span>Streamlit</span><span>Docker</span>
+                        </div>
+                        <p class="proj-wip-note">90% complete — source, live demo and documentation will be added
+                            once the project is finished.</p>
+                    </article>
+
+                    <!-- PROJECT 7: Options Algo-Trading Bot (In Progress) -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Sep 2026 – Present</span>
+                            <span class="proj-badge proj-badge-progress">In progress · 40%</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">Options Algo-Trading System — Groww API</h3>
+                        </div>
+                        <p class="proj-org">Personal project · own real-money account</p>
+                        <div class="proj-progress-wrap">
+                            <div class="proj-progress-bar-wrap">
+                                <div class="proj-progress-bar" style="--w:40%"></div>
+                            </div>
+                            <span class="proj-progress-label mono">40%</span>
+                        </div>
+                        <p class="proj-desc">Designing and building a deterministic, risk-controlled automated
+                            trading system for Indian index options (NIFTY / BANKNIFTY) on the Groww Trading API, for
+                            personal use on my own account rather than as a signal-selling or fund-management
+                            product. The pipeline chains market-regime detection, per-regime strategy selection,
+                            option-contract selection and a centralised risk engine before any order reaches the
+                            broker — deliberately keeping the entry/exit decision rule-based rather than
+                            model-driven, so every trade is auditable and reproducible.</p>
+                        <p class="proj-desc">Core safety mechanisms include automatic target/stop-loss/trailing-stop
+                            exits via broker-side OCO orders, a daily-loss kill switch, position reconciliation
+                            against the broker's actual state, and a paper/live trading-mode switch that defaults to
+                            disabled so no real order can be placed accidentally during development.</p>
+                        <div class="proj-tags">
+                            <span>Python</span><span>Groww API</span><span>PostgreSQL</span><span>Redis</span>
+                            <span>FastAPI</span><span>Streamlit</span><span>Risk engine</span><span>Docker</span>
+                        </div>
+                        <p class="proj-wip-note">40% complete — source, live demo and documentation will be added
+                            once the project is finished.</p>
+                    </article>
+
+                    <!-- PROJECT 8: E-Commerce Analytics Platform (In Progress) -->
+                    <article class="project-card reveal-up">
+                        <div class="proj-head">
+                            <span class="proj-period mono">Sep 2026 – Present</span>
+                            <span class="proj-badge proj-badge-progress">In progress · 40%</span>
+                        </div>
+                        <div class="proj-title-row">
+                            <h3 class="proj-title">E-Commerce Customer Retention &amp; Growth Analytics Platform</h3>
+                        </div>
+                        <p class="proj-org">Personal project · Olist Brazilian e-commerce dataset</p>
+                        <div class="proj-progress-wrap">
+                            <div class="proj-progress-bar-wrap">
+                                <div class="proj-progress-bar" style="--w:40%"></div>
+                            </div>
+                            <span class="proj-progress-label mono">40%</span>
+                        </div>
+                        <p class="proj-desc">An end-to-end analytics platform on ~100k real Olist orders, built to
+                            demonstrate the full data-scientist workflow rather than a single model. A PostgreSQL
+                            star schema (fact_orders with customer/product/seller/date dimensions) backs 15–20
+                            business queries — RFM segmentation, cohort repeat-purchase rate, late-delivery-by-region
+                            — followed by proper hypothesis testing (t-tests, chi-square) on real relationships in
+                            the data, such as payment method vs. order value and delivery lateness vs. review score.
+                        </p>
+                        <p class="proj-desc">On top of that, a clearly-labelled simulated A/B test evaluates a
+                            retention-email intervention with random assignment, a power/sample-size justification,
+                            and a proportions test with confidence interval on the lift. The final layer trains an
+                            XGBoost churn-risk model and picks its classification threshold by cost/benefit —
+                            estimated retained revenue from targeting the highest-risk decile against the cost of the
+                            offer — rather than defaulting to 0.5, tied together in a Streamlit dashboard.</p>
+                        <div class="proj-tags">
+                            <span>PostgreSQL</span><span>SQL</span><span>Statistical testing</span><span>A/B
+                                testing</span><span>XGBoost</span><span>pandas</span><span>Streamlit</span>
+                        </div>
+                        <p class="proj-wip-note">40% complete — source, live demo and documentation will be added
+                            once the project is finished.</p>
+                    </article>
+
+                </div>
             </div>
+        </section>
 
-            <!-- ▓▓▓ EDUCATION ▓▓▓
-           CHANGE 5: More information per entry, PDF result links, 2 extra education entries
-      ▓▓▓ -->
-            <div class="edu-timeline reveal-up" style="--delay:0.15s">
-                <h3 class="sub-title">Education</h3>
-                <div class="timeline">
+        <!-- ▓▓▓ SKILLS ▓▓▓ -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Technical skills</h2>
+                </div>
+                <div class="skills-grid reveal-up">
+                    <div class="skill-group">
+                        <h3 class="sg-title">Languages</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">ML / DL libraries</h3>
+                        <div class="skill-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">TensorFlow / Keras</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">Architectures</h3>
+                        <div class="skill-tags">
+                            <span class="tag">CNN (1D / 2D)</span>
+                            <span class="tag">ANN</span>
+                            <span class="tag">RNN / LSTM / GRU</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">UNet / ResUNet</span>
+                            <span class="tag">Encoder–decoder</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">Domains</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Generative AI</span>
+                            <span class="tag">Agentic AI</span>
+                            <span class="tag">Remote Sensing</span>
+                            <span class="tag">Geospatial AI</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Algorithmic trading systems</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">ML techniques</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Logistic Regression</span>
+                            <span class="tag">SVM</span>
+                            <span class="tag">Feature engineering</span>
+                            <span class="tag">Model evaluation</span>
+                            <span class="tag">Data augmentation</span>
+                            <span class="tag">Class imbalance handling</span>
+                            <span class="tag">Cost-based thresholding</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">Statistics &amp; experimentation</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Hypothesis testing (t-test / Chi-square)</span>
+                            <span class="tag">A/B testing</span>
+                            <span class="tag">Power &amp; sample-size analysis</span>
+                            <span class="tag">Confidence intervals</span>
+                            <span class="tag">RFM segmentation</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">Tools &amp; infra</h3>
+                        <div class="skill-tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">LangChain</span>
+                            <span class="tag">Pinecone</span>
+                            <span class="tag">FAISS</span>
+                            <span class="tag">PySpark</span>
+                            <span class="tag">Vertex AI / Gemini</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Git / GitHub</span>
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Jupyter</span>
+                            <span class="tag">Google Colab</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="sg-title">Working style</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Problem-solving</span>
+                            <span class="tag">Critical thinking</span>
+                            <span class="tag">Attention to detail</span>
+                            <span class="tag">Collaboration</span>
+                            <span class="tag">Adaptability</span>
+                            <span class="tag">Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Entry 1: MCA -->
+        <!-- ▓▓▓ EDUCATION ▓▓▓ -->
+        <section class="section section-alt" id="education">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div class="timeline reveal-up">
+
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
                             <span class="tl-date">Jul 2024 — May 2026</span>
                             <h4>Master of Computer Application (MCA)</h4>
-                            <p class="tl-inst">Pondicherry University &nbsp;·&nbsp; <strong>CGPA: 7.9 / 10</strong></p>
-                            <p class="tl-focus">Focus: Deep Learning · Computer Vision · NLP · RAG Systems · Geospatial
+                            <p class="tl-inst">Pondicherry University &nbsp;·&nbsp; <strong>CGPA: 7.9 / 10</strong>
+                            </p>
+                            <p class="tl-focus">Focus: Deep Learning, Computer Vision, NLP, RAG systems, Geospatial
                                 AI</p>
-                            <p class="tl-detail">Key Courses: Machine Learning, Neural Networks & Deep Learning, Data
-                                Structures &
-                                Algorithms, Database Management Systems, Software Engineering, Computer Networks, Cloud
-                                Computing.</p>
+                            <p class="tl-detail">Key courses: Machine Learning, Neural Networks &amp; Deep Learning,
+                                Data Structures &amp; Algorithms, Database Management Systems, Software Engineering,
+                                Computer Networks, Cloud Computing.</p>
                             <div class="tl-docs">
-                                <!-- Replace # with actual file paths, e.g. /static/docs/mca_sem1.pdf -->
-                                <a href="/static/docs/mca_sem1.pdf" class="doc-link" target="_blank">Sem 1 Result ↗</a>
-                                <a href="/static/docs/mca_sem2.pdf" class="doc-link" target="_blank">Sem 2 Result ↗</a>
-                                <a href="/static/docs/mca_sem3.pdf" class="doc-link" target="_blank">Sem 3 Result ↗</a>
-                                <a href="/static/docs/mca_sem4.pdf" class="doc-link" target="_blank">Sem 4 Result ↗</a>
+                                <a href="/static/docs/mca_sem1.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    1 result</a>
+                                <a href="/static/docs/mca_sem2.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    2 result</a>
+                                <a href="/static/docs/mca_sem3.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    3 result</a>
+                                <a href="/static/docs/mca_sem4.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    4 result</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Entry 2: BSc Mathematics -->
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
                             <span class="tl-date">Jul 2020 — Apr 2023</span>
                             <h4>B.Sc. Mathematics (Honours)</h4>
-                            <p class="tl-inst">Vidyasagar University &nbsp;·&nbsp; <strong>CGPA: 7.89 / 10</strong></p>
-                            <p class="tl-focus">Foundation: Linear Algebra · Calculus · Statistics · Probability · Real
+                            <p class="tl-inst">Vidyasagar University &nbsp;·&nbsp; <strong>CGPA: 7.89 / 10</strong>
+                            </p>
+                            <p class="tl-focus">Foundation: Linear Algebra, Calculus, Statistics, Probability, Real
                                 Analysis</p>
-                            <p class="tl-detail">Key Courses: Abstract Algebra, Differential Equations, Numerical
-                                Analysis,
-                                Operations Research, Discrete Mathematics, Mathematical Statistics.</p>
+                            <p class="tl-detail">Key courses: Abstract Algebra, Differential Equations, Numerical
+                                Analysis, Operations Research, Discrete Mathematics, Mathematical Statistics.</p>
                             <div class="tl-docs">
-                                <a href="/static/docs/bsc_sem1.pdf" class="doc-link" target="_blank">Sem 1 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_sem2.pdf" class="doc-link" target="_blank">Sem 2 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_sem3.pdf" class="doc-link" target="_blank">Sem 3 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_sem4.pdf" class="doc-link" target="_blank">Sem 4 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_sem5.pdf" class="doc-link" target="_blank">Sem 5 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_sem6.pdf" class="doc-link" target="_blank">Sem 6 Result
-                                    ↗</a>
-                                <a href="/static/docs/bsc_certificate.pdf" class="doc-link" target="_blank">Certificate
-                                    ↗</a>
+                                <a href="/static/docs/bsc_sem1.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    1 result</a>
+                                <a href="/static/docs/bsc_sem2.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    2 result</a>
+                                <a href="/static/docs/bsc_sem3.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    3 result</a>
+                                <a href="/static/docs/bsc_sem4.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    4 result</a>
+                                <a href="/static/docs/bsc_sem5.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    5 result</a>
+                                <a href="/static/docs/bsc_sem6.pdf" class="doc-link" target="_blank" rel="noopener">Sem
+                                    6 result</a>
+                                <a href="/static/docs/bsc_certificate.pdf" class="doc-link" target="_blank"
+                                    rel="noopener">Certificate</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Entry 3: Higher Secondary (Class XII) — Fill in your details -->
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
-                            <span class="tl-date">2018 — 2020</span><!-- Update year -->
+                            <span class="tl-date">2018 — 2020</span>
                             <h4>Higher Secondary (Class XII — Science)</h4>
-                            <p class="tl-inst">[Tamluk Hamilton High School] &nbsp;·&nbsp; <strong>[WBHSE] ·
-                                    [72.4%]</strong></p>
-                            <p class="tl-focus">Subjects: Physics · Chemistry · Mathematics · Biology
-                            </p>
-                            <p class="tl-detail">Achieved strong performance in core science and mathematics subjects,
-                                building the analytical foundation for higher education in computer science.</p>
+                            <p class="tl-inst">Tamluk Hamilton High School &nbsp;·&nbsp; <strong>WBHSE ·
+                                    72.4%</strong></p>
+                            <p class="tl-focus">Subjects: Physics, Chemistry, Mathematics, Biology</p>
+                            <p class="tl-detail">Achieved strong performance in core science and mathematics
+                                subjects, building the analytical foundation for higher education in computer
+                                science.</p>
                             <div class="tl-docs">
-                                <a href="/static/docs/class12_marksheet.pdf" class="doc-link" target="_blank">Marksheet
-                                    ↗</a>
-                                <a href="/static/docs/class12_certificate.pdf" class="doc-link"
-                                    target="_blank">Certificate ↗</a>
+                                <a href="/static/docs/class12_marksheet.pdf" class="doc-link" target="_blank"
+                                    rel="noopener">Marksheet</a>
+                                <a href="/static/docs/class12_certificate.pdf" class="doc-link" target="_blank"
+                                    rel="noopener">Certificate</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Entry 4: Secondary (Class X) — Fill in your details -->
                     <div class="timeline-item">
                         <div class="tl-dot"></div>
                         <div class="tl-content">
-                            <span class="tl-date">2016 — 2018</span><!-- Update year -->
+                            <span class="tl-date">2016 — 2018</span>
                             <h4>Secondary (Class X)</h4>
-                            <p class="tl-inst">[Tamluk Hamilton High School] &nbsp;·&nbsp; <strong>[WBBSE] ·
-                                    [90.4%]</strong>
-                            </p>
-                            <p class="tl-focus">Subjects: Bengali · English · Mathematics · Physical Science · Life
-                                Science · History · Geography · IT
-                            </p>
-                            <p class="tl-detail">Completed foundational schooling with distinction, demonstrating early
-                                aptitude for mathematics and logical reasoning.</p>
+                            <p class="tl-inst">Tamluk Hamilton High School &nbsp;·&nbsp; <strong>WBBSE ·
+                                    90.4%</strong></p>
+                            <p class="tl-focus">Subjects: Bengali, English, Mathematics, Physical Science, Life
+                                Science, History, Geography, IT</p>
+                            <p class="tl-detail">Completed foundational schooling with distinction, demonstrating
+                                early aptitude for mathematics and logical reasoning.</p>
                             <div class="tl-docs">
-                                <a href="/static/docs/class10_marksheet.pdf" class="doc-link" target="_blank">Marksheet
-                                    ↗</a>
-                                <a href="/static/docs/class10_certificate.pdf" class="doc-link"
-                                    target="_blank">Certificate ↗</a>
+                                <a href="/static/docs/class10_marksheet.pdf" class="doc-link" target="_blank"
+                                    rel="noopener">Marksheet</a>
+                                <a href="/static/docs/class10_certificate.pdf" class="doc-link" target="_blank"
+                                    rel="noopener">Certificate</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ▓▓▓ PROJECTS ▓▓▓
-       CHANGE 5: Tilt animation removed (via JS), more info added, report PDF links added
-       CHANGE 9: Updated content from new resume
-  ▓▓▓ -->
-    <section class="section section-alt" id="projects">
-        <div class="sec-watermark">02</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">02</p>
-                <h2 class="section-title">Projects &amp; Research</h2>
-            </div>
-            <div class="projects-list">
-
-                <!-- PROJECT 1: Accent Classification -->
-                <article class="project-card reveal-up">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">01</span>
-                            <span class="proj-period">Jul 2025 – Nov 2025</span>
-                        </div>
-                        <span class="proj-badge">Published · Hugging Face</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">Accent-Based Regional Origin Identification</h3>
-                        <a href="/static/docs/accent_classifier_case_study.pdf" target="_blank" class="proj-doc-badge">
-                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
-                        </a>
-                    </div>
-                    <p class="proj-org">Pondicherry University</p>
-                    <p class="proj-desc">Developed a multiclass accent classification system by extracting and
-                        temporally
-                        aligning 7 speech features — MFCC, Mel-spectrogram, Spectral Contrast, Chroma, ZCR, RMS, and
-                        Tonnetz —
-                        from 1,164 self-collected audio samples covering Kerala and Tamil Nadu English speech.
-                        Created a robust dataset and designed an evaluation pipeline for comparing multiple model
-                        architectures.</p>
-                    <p class="proj-desc">Benchmarked 5 architectures (SVM, Logistic Regression, ANN, 1D-CNN, 2D-CNN)
-                        with
-                        regularisation, data augmentation, and class weighting. The optimised 4-block 2D-CNN over
-                        stacked spectrogram-like tensors achieved <strong>97.4% test accuracy</strong> with a 0.99
-                        ROC-AUC, evaluated on a held-out, stratified 20% split of unseen speakers — outperforming
-                        the SVM (90%) and ANN (93%) baselines.
-                    </p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">97.4%</span><span class="metric-key">Test Accuracy
-                                (2D-CNN)</span></div>
-                        <div class="metric"><span class="metric-val">0.99</span><span class="metric-key">ROC-AUC
-                                Score</span></div>
-                        <div class="metric"><span class="metric-val">5</span><span class="metric-key">Architectures
-                                Benchmarked</span></div>
-                        <div class="metric"><span class="metric-val">1,164</span><span class="metric-key">Audio
-                                Samples</span></div>
-                        <div class="metric"><span class="metric-val">7</span><span class="metric-key">Speech Features
-                                Aligned</span></div>
-                    </div>
-                    <div class="proj-tags">
-                        <span>Python</span><span>TensorFlow / Keras</span><span>2D-CNN</span><span>Librosa</span>
-                        <span>MFCC</span><span>Mel-spectrogram</span><span>Scikit-learn</span><span>Gradio</span>
-                        <span>Hugging Face</span>
-                    </div>
-                    <div class="proj-actions">
-                        <a href="https://github.com/anitkumarmaity1-hash/accent-classifier-cnn" target="_blank"
-                            class="proj-link">Source Code on GitHub ↗</a>
-                        <a href="https://huggingface.co/spaces/anit99/Accent_Classifier_CNN_2D/tree/main"
-                            target="_blank" class="proj-link">Live Demo on Hugging Face
-                            ↗</a>
-                        <a href="/static/docs/accent_report.pdf" target="_blank" class="proj-report-link">Project
-                            Report</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 2: Mineral Segmentation -->
-                <article class="project-card reveal-up" style="--delay:0.1s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">02</span>
-                            <span class="proj-period">Jan 2026 – Apr 2026</span>
-                        </div>
-                        <span class="proj-badge">Research · Geospatial AI</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">Mineral Region Segmentation via Multispectral Remote Sensing</h3>
-                        <a href="/static/docs/mineral_prospectivity_case_study.pdf" target="_blank"
-                            class="proj-doc-badge">
-                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
-                        </a>
-                    </div>
-                    <p class="proj-org">Pondicherry University</p>
-                    <p class="proj-desc">Engineered an end-to-end semantic segmentation pipeline for mineralisation
-                        mapping
-                        over Salem District (9,561 km², 5.79M valid pixels) using Landsat-8 satellite imagery (7
-                        spectral bands, 30 m resolution). Applied PCA reduction (97.68% variance retained, 3
-                        components) and up to 15-channel multi-source geospatial feature fusion across five tested
-                        input configurations.</p>
-                    <p class="proj-desc">Resolved a severe <strong>2,509:1 class imbalance</strong> (2,309 labelled
-                        mineral pixels out of 5.79M) via a Weighted BCE (pos_weight=45) + Dice loss combination.
-                        Independently designed and comparatively trained three
-                        encoder-decoder architectures (U-Net, Attention U-Net, ResUNet) using the AdamW optimiser
-                        with early stopping on validation IoU. Identified
-                        ResUNet-15ch as the most operationally effective model, achieving the highest mineral recall
-                        (92.42%)
-                        critical for geological survey applications.</p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">90.67%</span><span class="metric-key">U-Net IoU
-                                Score</span></div>
-                        <div class="metric"><span class="metric-val">95.11%</span><span class="metric-key">U-Net F1
-                                Score</span></div>
-                        <div class="metric"><span class="metric-val">92.42%</span><span class="metric-key">ResUNet
-                                Recall (Best)</span></div>
-                        <div class="metric"><span class="metric-val">2509:1</span><span class="metric-key">Class
-                                Imbalance Solved</span></div>
-                        <div class="metric"><span class="metric-val">3</span><span class="metric-key">Architectures
-                                Compared</span></div>
-                        <div class="metric"><span class="metric-val">9,561</span><span class="metric-key">km²
-                                Mapped</span></div>
-                    </div>
-                    <div class="proj-highlight">
-                        <strong>Geological survey insight:</strong> ResUNet-15ch selected as the operationally superior
-                        model — under extreme imbalance, a missed deposit costs far more than a false alarm, and
-                        highest mineral recall (92.42%) minimises those missed detections in field survey contexts.
-                    </div>
-                    <div class="proj-tags">
-                        <span>PyTorch</span><span>U-Net</span><span>Attention U-Net</span><span>ResUNet</span>
-                        <span>Landsat-8</span><span>PCA</span><span>Geospatial AI</span><span>Semantic
-                            Segmentation</span>
-                    </div>
-                    <div class="proj-actions">
-                        <a href="https://github.com/anitkumarmaity1-hash/Minerals_Prospective_Mapping" target="_blank"
-                            class="proj-link">Source Code on GitHub ↗</a>
-                        <a href="/static/docs/mineral_report.pdf" target="_blank" class="proj-report-link">Project
-                            Report</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 3: MediAssist — RBAC Medical RAG Chatbot -->
-                <article class="project-card reveal-up" style="--delay:0.2s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">03</span>
-                            <span class="proj-period">Apr 2026 – Present</span>
-                        </div>
-                        <span class="proj-badge">RBAC · Security-Audited RAG</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">MediAssist — RBAC-Based Medical RAG Chatbot</h3>
-                        <a href="/static/docs/mediassist_technical_overview.pdf" target="_blank" class="proj-doc-badge">
-                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
-                        </a>
-                    </div>
-                    <p class="proj-org">Personal Project</p>
-                    <p class="proj-desc">Built a role-based-access-control medical chatbot on a hybrid retrieval
-                        RAG pipeline indexing <strong>88,195 chunks in Pinecone</strong> across 9 medical textbooks,
-                        embedded with PubMedBERT. Retrieval fuses full-corpus BM25 reranking with vector search
-                        using true Reciprocal Rank Fusion, and every retrieved chunk is filtered by the caller's
-                        role — Doctor, Nurse, or Admin — before generation.</p>
-                    <p class="proj-desc">The Groq · Llama 3.3 70B generation step emits explicit REASONING and
-                        FINAL_ANSWER markers so clinicians can audit how an answer was reached, and a live
-                        LLM-as-judge scores every answer for faithfulness against retrieved context, triggering one
-                        capped regeneration on failure. Hardened through a full security &amp; architecture audit —
-                        <strong>14 revisions</strong> covering JWT refresh-token role re-verification, a
-                        path-traversal fix on the upload endpoint, secret rotation with <code>git filter-repo</code>,
-                        and a GitHub Actions CI/CD gate (lint → tests → Docker build → deploy).
-                    </p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">88,195</span><span class="metric-key">Chunks
-                                Indexed in Pinecone</span></div>
-                        <div class="metric"><span class="metric-val">3</span><span class="metric-key">RBAC Roles</span>
-                        </div>
-                        <div class="metric"><span class="metric-val">14</span><span class="metric-key">Audit-Driven
-                                Revisions</span></div>
-                        <div class="metric"><span class="metric-val">BM25→RRF</span><span class="metric-key">Hybrid
-                                Rerank</span></div>
-                    </div>
-                    <div class="proj-tags">
-                        <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>PubMedBERT</span>
-                        <span>BM25 / RRF</span><span>Groq · Llama 3.3 70B</span><span>MongoDB Atlas</span>
-                        <span>Docker</span><span>JWT</span><span>GitHub Actions CI/CD</span>
-                    </div>
-                    <div class="proj-actions">
-                        <a href="https://github.com/anitkumarmaity1-hash/medical-assistant" target="_blank"
-                            class="proj-link">Source Code on GitHub ↗</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 4: VideoMind — Multimodal Video RAG -->
-                <article class="project-card reveal-up" style="--delay:0.3s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">04</span>
-                            <span class="proj-period">2026</span>
-                        </div>
-                        <span class="proj-badge">Solo Build · Multimodal RAG</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">VideoMind — Multimodal Video Question-Answering</h3>
-                        <a href="/static/docs/videomind_case_study.pdf" target="_blank" class="proj-doc-badge">
-                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
-                        </a>
-                    </div>
-                    <p class="proj-org">Personal Project</p>
-                    <p class="proj-desc">Built a multimodal video question-answering system that retrieves both
-                        what was said and what was shown. Videos are ingested via yt-dlp, audio is transcribed with
-                        faster-whisper / Groq ASR, and sampled frames are dual-indexed — transcript chunks into a
-                        384-dim BGE text index, frames into a 512-dim CLIP ViT-B/32 visual index, both in Pinecone
-                        under one <code>video_id</code>.</p>
-                    <p class="proj-desc">Each query fuses both indexes at a tuned 0.6 text / 0.4 visual weighting,
-                        reranks by timestamp proximity, and a Groq LLM answers under a "cite only supplied evidence"
-                        prompt, linking back to the exact timestamp the answer came from. Hardened after real-load
-                        testing — a FastAPI lifespan hook pre-loads the embedding model to fix a cold-start race
-                        with Streamlit's status poller, a sliding-window rate limiter keeps requests under Groq's
-                        TPM budget, and swappable <code>StorageBackend</code> / <code>LLMProvider</code>
-                        abstractions make the deployment target config-driven, not hardcoded.</p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
-                                Modalities Fused</span></div>
-                        <div class="metric"><span class="metric-val">384 / 512</span><span class="metric-key">Text /
-                                Visual Embedding Dims</span></div>
-                        <div class="metric"><span class="metric-val">0.6 / 0.4</span><span
-                                class="metric-key">Text–Visual
-                                Fusion Weighting</span></div>
-                        <div class="metric"><span class="metric-val">34</span><span class="metric-key">Automated
-                                Tests in CI</span></div>
-                    </div>
-                    <div class="proj-tags">
-                        <span>FastAPI</span><span>Streamlit</span><span>Pinecone</span><span>Groq · Llama
-                            3.3 70B</span><span>faster-whisper</span><span>CLIP ViT-B/32</span><span>BGE
-                            Embeddings</span><span>yt-dlp</span><span>Docker</span><span>GitHub Actions CI</span>
-                    </div>
-                    <div class="proj-actions">
-                        <a href="https://github.com/anitkumarmaity1-hash/VideoMind" target="_blank"
-                            class="proj-link">Source Code on GitHub ↗</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 5: Message Notification Router -->
-                <article class="project-card reveal-up" style="--delay:0.4s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">05</span>
-                            <span class="proj-period">Aug 2026</span>
-                        </div>
-                        <span class="proj-badge">Hackathon · 24hr Solo Build</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">Message Notification Router</h3>
-                        <a href="/static/docs/message_router_case_study.pdf" target="_blank" class="proj-doc-badge">
-                            <span class="pdb-icon">📄</span>Technical Writing &amp; Documentation
-                        </a>
-                    </div>
-                    <p class="proj-org">HackerRank Orchestrate — 24-Hour Hackathon</p>
-                    <p class="proj-desc">Built a personalized, multimodal triage system for WhatsApp messages in a
-                        24-hour hackathon, deciding whether each message should notify, go to a digest, or be muted.
-                        Messages are normalised to plain text regardless of modality — EasyOCR for images,
-                        int8-quantized faster-whisper for voice notes — then matched against the recipient's quiet
-                        hours, engagement history, and sender verification / opt-out status using
-                        sentence-transformer embedding retrieval.</p>
-                    <p class="proj-desc">A three-tier decision pipeline resolves <strong>45% of the 110-message
-                            evaluation set</strong> with conservative rules before touching a model, routes the rest
-                        through a Groq Llama 3.3 70B → Llama 3.1 8B → local Ollama fallback chain that proactively
-                        switches ahead of rate limits, and validates every output against a strict
-                        action / message_type contract with citation-ID verification against retrieval — a
-                        deterministic fallback guarantees a valid decision even if every model tier fails.</p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">110/110</span><span class="metric-key">Valid
-                                Decisions Routed</span></div>
-                        <div class="metric"><span class="metric-val">45%</span><span class="metric-key">Resolved
-                                Pre-LLM</span></div>
-                        <div class="metric"><span class="metric-val">3</span><span class="metric-key">Modalities —
-                                Text / Image / Voice</span></div>
-                        <div class="metric"><span class="metric-val">3-tier</span><span class="metric-key">Model
-                                Fallback Chain</span></div>
-                    </div>
-                    <div class="proj-tags">
-                        <span>Python</span><span>Groq · Llama 3.3 70B</span><span>Llama 3.1 8B</span><span>Ollama</span>
-                        <span>sentence-transformers</span><span>faster-whisper</span><span>EasyOCR</span>
-                        <span>pandas</span><span>tiktoken</span>
-                    </div>
-                    <div class="proj-actions">
-                        <a href="https://github.com/anitkumarmaity1-hash/WhatsApp-Message-Notification-Router"
-                            target="_blank" class="proj-link">Source Code on GitHub ↗</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 6: Industrial Intelligence Agent (In Progress) -->
-                <article class="project-card reveal-up" style="--delay:0.5s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">06</span>
-                            <span class="proj-period">Sep 2026 – Present</span>
-                        </div>
-                        <span class="proj-badge proj-badge-progress">In Progress · 90%</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">Industrial Intelligence Agent — AI Operations Copilot</h3>
-                    </div>
-                    <p class="proj-org">Personal Project</p>
-                    <div class="proj-progress-wrap">
-                        <div class="proj-progress-bar-wrap">
-                            <div class="proj-progress-bar" style="--w:90%"></div>
-                        </div>
-                        <span class="proj-progress-label">90% complete</span>
-                    </div>
-                    <p class="proj-desc">Building an agentic decision-support system that investigates abnormal
-                        factory-machine behaviour and produces evidence-backed maintenance recommendations, instead
-                        of a chatbot that free-generates answers. A LangGraph agent plans which evidence a query
-                        needs and pulls it from three independent sources — PySpark-derived machine health metrics,
-                        historical PostgreSQL records, and a maintenance-document knowledge base — before Gemini
-                        (via Vertex AI) synthesises a root-cause analysis with explicit citations.</p>
-                    <p class="proj-desc">The RAG layer ships two retrieval backends behind one contract — a Pinecone +
-                        Vertex AI dense retriever for production, and a dependency-free BM25 lexical retriever that
-                        the system automatically degrades to if cloud credentials or connectivity are unavailable —
-                        so the agent never goes fully silent. Risk scoring, anomaly thresholds, and all numeric
-                        evidence are computed deterministically in code; the LLM is only allowed to interpret and
-                        explain evidence it was actually given, never invent it.</p>
-                    <div class="proj-metrics">
-                        <div class="metric"><span class="metric-val">10</span><span class="metric-key">Build Phases
-                                Completed</span></div>
-                        <div class="metric"><span class="metric-val">53</span><span class="metric-key">RAG Layer
-                                Tests Passing</span></div>
-                        <div class="metric"><span class="metric-val">62</span><span class="metric-key">Knowledge-Base
-                                Chunks Indexed</span></div>
-                        <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
-                                Backends (Dense + BM25)</span></div>
-                    </div>
-                    <div class="proj-tags">
-                        <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span>
-                        <span>PySpark</span><span>PostgreSQL</span><span>Pinecone</span><span>Vertex AI · Gemini</span>
-                        <span>BM25</span><span>Streamlit</span><span>Docker</span>
-                    </div>
-                    <p class="proj-wip-note">90% complete — GitHub source, live demo, and documentation will be
-                        added once the project is finished.</p>
-                </article>
-
-                <!-- PROJECT 7: Options Algo-Trading Bot (In Progress) -->
-                <article class="project-card reveal-up" style="--delay:0.6s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">07</span>
-                            <span class="proj-period">Sep 2026 – Present</span>
-                        </div>
-                        <span class="proj-badge proj-badge-progress">In Progress · 40%</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">Options Algo-Trading System — Groww API</h3>
-                    </div>
-                    <p class="proj-org">Personal Project · Own Real-Money Account</p>
-                    <div class="proj-progress-wrap">
-                        <div class="proj-progress-bar-wrap">
-                            <div class="proj-progress-bar" style="--w:40%"></div>
-                        </div>
-                        <span class="proj-progress-label">40% complete</span>
-                    </div>
-                    <p class="proj-desc">Designing and building a deterministic, risk-controlled automated
-                        trading system for Indian index options (NIFTY / BANKNIFTY) on the Groww Trading API, for
-                        personal use on my own account rather than as a signal-selling or fund-management product.
-                        The pipeline chains market-regime detection, per-regime strategy selection, option-contract
-                        selection, and a centralised risk engine before any order reaches the broker — deliberately
-                        keeping the entry/exit decision rule-based rather than model-driven, so every trade is
-                        auditable and reproducible.</p>
-                    <p class="proj-desc">Core safety mechanisms include automatic target/stop-loss/trailing-stop
-                        exits via broker-side OCO orders, a daily-loss kill switch, position reconciliation against
-                        the broker's actual state, and a paper/live trading-mode switch that defaults to disabled so
-                        no real order can be placed accidentally during development.</p>
-                    <div class="proj-tags">
-                        <span>Python</span><span>Groww API</span><span>PostgreSQL</span><span>Redis</span>
-                        <span>FastAPI</span><span>Streamlit</span><span>Risk Engine</span><span>Docker</span>
-                    </div>
-                    <p class="proj-wip-note">40% complete — GitHub source, live demo, and documentation will be
-                        added once the project is finished.</p>
-                </article>
-
-                <!-- PROJECT 8: E-Commerce Customer Retention & Growth Analytics Platform (In Progress) -->
-                <article class="project-card reveal-up" style="--delay:0.7s">
-                    <div class="proj-head">
-                        <div>
-                            <span class="proj-index">08</span>
-                            <span class="proj-period">Sep 2026 – Present</span>
-                        </div>
-                        <span class="proj-badge proj-badge-progress">In Progress · 40%</span>
-                    </div>
-                    <div class="proj-title-row">
-                        <h3 class="proj-title">E-Commerce Customer Retention &amp; Growth Analytics Platform</h3>
-                    </div>
-                    <p class="proj-org">Personal Project · Olist Brazilian E-Commerce Dataset</p>
-                    <div class="proj-progress-wrap">
-                        <div class="proj-progress-bar-wrap">
-                            <div class="proj-progress-bar" style="--w:40%"></div>
-                        </div>
-                        <span class="proj-progress-label">40% complete</span>
-                    </div>
-                    <p class="proj-desc">An end-to-end analytics platform on ~100k real Olist orders, built to
-                        demonstrate the full data-scientist workflow rather than a single model. A PostgreSQL star
-                        schema (fact_orders with customer/product/seller/date dimensions) backs 15–20 business
-                        queries — RFM segmentation, cohort repeat-purchase rate, late-delivery-by-region — followed by
-                        proper hypothesis testing (t-tests, chi-square) on real relationships in the data, such as
-                        payment method vs. order value and delivery lateness vs. review score.</p>
-                    <p class="proj-desc">On top of that, a clearly-labelled simulated A/B test evaluates a
-                        retention-email intervention with random assignment, a power/sample-size justification, and a
-                        proportions test with confidence interval on the lift. The final layer trains an XGBoost
-                        churn-risk model and picks its classification threshold by cost/benefit — estimated retained
-                        revenue from targeting the highest-risk decile against the cost of the offer — rather than
-                        defaulting to 0.5, tied together in a Streamlit dashboard.</p>
-                    <div class="proj-tags">
-                        <span>PostgreSQL</span><span>SQL</span><span>Statistical Testing</span><span>A/B
-                            Testing</span><span>XGBoost</span><span>pandas</span><span>Streamlit</span>
-                    </div>
-                    <p class="proj-wip-note">40% complete — GitHub source, live demo, and documentation will be
-                        added once the project is finished.</p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ▓▓▓ SKILLS ▓▓▓
-       CHANGE 9: Added NumPy, Pandas; added Generative AI to domains (from updated resume)
-  ▓▓▓ -->
-    <section class="section" id="skills">
-        <div class="sec-watermark">03</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">03</p>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid reveal-up">
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">Python</span>
-                        <span class="tag">SQL</span>
-                    </div>
+        <!-- ▓▓▓ CERTIFICATIONS ▓▓▓ -->
+        <section class="section" id="certifications">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Certifications</h2>
+                    <p class="section-sub">NPTEL — National Programme on Technology Enhanced Learning</p>
                 </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML / DL Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">PyTorch</span>
-                        <span class="tag tag-hot">TensorFlow / Keras</span>
-                        <span class="tag">Scikit-learn</span>
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">NumPy</span>
-                        <span class="tag">Pandas</span>
+                <div class="certs-grid reveal-up">
+
+                    <div class="cert-card">
+                        <div class="cert-badge cert-badge-silver">Elite Silver</div>
+                        <h4>The Joy of Computing Using Python</h4>
+                        <p class="cert-meta">IIT Madras &nbsp;·&nbsp; Score: 76%</p>
+                        <div class="cert-bar-wrap">
+                            <div class="cert-bar" style="--w:76%"></div>
+                        </div>
+                        <a href="/static/docs/cert_computing_python.pdf" target="_blank" rel="noopener"
+                            class="cert-pdf-link">View certificate</a>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Architectures</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">CNN (1D / 2D)</span>
-                        <span class="tag">ANN</span>
-                        <span class="tag">RNN / LSTM / GRU</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">UNet / ResUNet</span>
-                        <span class="tag">Encoder–Decoder</span>
+
+                    <div class="cert-card">
+                        <div class="cert-badge">Elite</div>
+                        <h4>Data Analytics with Python</h4>
+                        <p class="cert-meta">IIT Roorkee &nbsp;·&nbsp; Score: 61%</p>
+                        <div class="cert-bar-wrap">
+                            <div class="cert-bar" style="--w:61%"></div>
+                        </div>
+                        <a href="/static/docs/cert_data_analytics.pdf" target="_blank" rel="noopener"
+                            class="cert-pdf-link">View certificate</a>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Domains</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">Computer Vision</span>
-                        <span class="tag tag-hot">NLP</span>
-                        <span class="tag tag-hot">Generative AI</span>
-                        <span class="tag tag-hot">Agentic AI</span>
-                        <span class="tag">Remote Sensing</span>
-                        <span class="tag">Geospatial AI</span>
-                        <span class="tag tag-hot">RAG</span>
-                        <span class="tag">Algorithmic Trading Systems</span>
+
+                    <div class="cert-card">
+                        <div class="cert-badge">Elite</div>
+                        <h4>Introduction to Machine Learning</h4>
+                        <p class="cert-meta">IIT Kharagpur &nbsp;·&nbsp; Score: 64%</p>
+                        <div class="cert-bar-wrap">
+                            <div class="cert-bar" style="--w:64%"></div>
+                        </div>
+                        <a href="/static/docs/cert_intro_ml.pdf" target="_blank" rel="noopener"
+                            class="cert-pdf-link">View certificate</a>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>ML Techniques</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Logistic Regression</span>
-                        <span class="tag">SVM</span>
-                        <span class="tag">Feature Engineering</span>
-                        <span class="tag">Model Evaluation</span>
-                        <span class="tag">Data Augmentation</span>
-                        <span class="tag">Class Imbalance Handling</span>
-                        <span class="tag">Cost-Based Thresholding</span>
+
+                    <div class="cert-card">
+                        <div class="cert-badge">Elite</div>
+                        <h4>Foundation of Deep Learning: Concepts and Applications</h4>
+                        <p class="cert-meta">IISc Bangalore &nbsp;·&nbsp; Score: 70%</p>
+                        <div class="cert-bar-wrap">
+                            <div class="cert-bar" style="--w:70%"></div>
+                        </div>
+                        <a href="/static/docs/cert_deep_learning.pdf" target="_blank" rel="noopener"
+                            class="cert-pdf-link">View certificate</a>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Statistics &amp; Experimentation</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Hypothesis Testing (t-test / Chi-square)</span>
-                        <span class="tag">A/B Testing</span>
-                        <span class="tag">Power &amp; Sample-Size Analysis</span>
-                        <span class="tag">Confidence Intervals</span>
-                        <span class="tag">RFM Segmentation</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Tools &amp; Infra</h3>
-                    <div class="skill-tags">
-                        <span class="tag tag-hot">FastAPI</span>
-                        <span class="tag tag-hot">LangGraph</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">Pinecone</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">PySpark</span>
-                        <span class="tag">Vertex AI / Gemini</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Redis</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Git / GitHub</span>
-                        <span class="tag">VS Code</span>
-                        <span class="tag">Jupyter</span>
-                        <span class="tag">Google Colab</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3 class="sg-title"><span class="sg-icon">⬡</span>Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Problem-Solving</span>
-                        <span class="tag">Critical Thinking</span>
-                        <span class="tag">Attention to Detail</span>
-                        <span class="tag">Collaboration</span>
-                        <span class="tag">Adaptability</span>
-                        <span class="tag">Communication</span>
-                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ▓▓▓ CERTIFICATIONS ▓▓▓
-       CHANGE 6: Each cert card now has a PDF download link
-  ▓▓▓ -->
-    <section class="section section-alt" id="certifications">
-        <div class="sec-watermark">04</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">04</p>
-                <h2 class="section-title">Certifications</h2>
-                <p class="section-sub">NPTEL — National Programme on Technology Enhanced Learning</p>
-            </div>
-            <div class="certs-grid">
-
-                <div class="cert-card reveal-up">
-                    <div class="cert-glow"></div>
-                    <div class="cert-badge cert-badge-silver">Elite Silver</div>
-                    <h4>The Joy of Computing Using Python</h4>
-                    <p class="cert-meta">IIT Madras &nbsp;·&nbsp; Score: 76%</p>
-                    <div class="cert-bar-wrap">
-                        <div class="cert-bar" style="--w:76%"></div>
-                    </div>
-                    <!-- Replace # with path to your certificate PDF -->
-                    <a href="/static/docs/cert_computing_python.pdf" target="_blank" class="cert-pdf-link">View
-                        Certificate ↗</a>
+        <!-- ▓▓▓ CONTACT ▓▓▓ -->
+        <section class="section section-alt" id="contact">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Let's build something useful</h2>
                 </div>
-
-                <div class="cert-card reveal-up" style="--delay:0.1s">
-                    <div class="cert-glow"></div>
-                    <div class="cert-badge">Elite</div>
-                    <h4>Data Analytics with Python</h4>
-                    <p class="cert-meta">IIT Roorkee &nbsp;·&nbsp; Score: 61%</p>
-                    <div class="cert-bar-wrap">
-                        <div class="cert-bar" style="--w:61%"></div>
-                    </div>
-                    <a href="/static/docs/cert_data_analytics.pdf" target="_blank" class="cert-pdf-link">View
-                        Certificate ↗</a>
-                </div>
-
-                <div class="cert-card reveal-up" style="--delay:0.2s">
-                    <div class="cert-glow"></div>
-                    <div class="cert-badge">Elite</div>
-                    <h4>Introduction to Machine Learning</h4>
-                    <p class="cert-meta">IIT Kharagpur &nbsp;·&nbsp; Score: 64%</p>
-                    <div class="cert-bar-wrap">
-                        <div class="cert-bar" style="--w:64%"></div>
-                    </div>
-                    <a href="/static/docs/cert_intro_ml.pdf" target="_blank" class="cert-pdf-link">View Certificate
-                        ↗</a>
-                </div>
-
-                <div class="cert-card reveal-up" style="--delay:0.3s">
-                    <div class="cert-glow"></div>
-                    <div class="cert-badge">Elite</div>
-                    <h4>Foundation of Deep Learning: Concepts and Applications</h4>
-                    <p class="cert-meta">IISc Bangalore &nbsp;·&nbsp; Score: 70%</p>
-                    <div class="cert-bar-wrap">
-                        <div class="cert-bar" style="--w:70%"></div>
-                    </div>
-                    <a href="/static/docs/cert_deep_learning.pdf" target="_blank" class="cert-pdf-link">View Certificate
-                        ↗</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ▓▓▓ CONTACT ▓▓▓
-       CHANGE 7: Fixed form — uses getElementById, robust error handling
-  ▓▓▓ -->
-    <section class="section" id="contact">
-        <div class="sec-watermark">05</div>
-        <div class="container">
-            <div class="section-header reveal-left">
-                <p class="section-index">05</p>
-                <h2 class="section-title">Get In Touch</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info reveal-up">
-                    <p class="contact-desc">I'm open to research collaborations, ML/AI internships, and full-time roles.
-                        Whether it's a challenging dataset or a fresh AI product idea — let's talk!</p>
-                    <div class="contact-links">
-                        <a href="mailto:anitkumarmaity1@gmail.com" class="contact-item">
-                            <span class="ci-icon">✉</span>
-                            <span>anitkumarmaity1@gmail.com</span>
-                        </a>
-                        <a href="tel:+918967784334" class="contact-item">
-                            <span class="ci-icon">☎</span>
-                            <span>+91 8967784334</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank"
-                            class="contact-item">
-                            <span class="ci-icon">in</span>
-                            <span>linkedin.com/in/anit-kumar-maity</span>
-                        </a>
-                        <a href="https://github.com/anitkumarmaity1-hash" target="_blank" class="contact-item">
-                            <span class="ci-icon">GH</span>
-                            <span>github.com/YOUR_USERNAME</span>
-                        </a>
-                        <div class="contact-item">
-                            <span class="ci-icon">📍</span>
-                            <span>Tamluk, Purba Medinipur, West Bengal, 721636, India</span>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-up">
+                        <p class="contact-desc">I'm open to research collaborations, ML/AI internships and full-time
+                            roles. Whether it's a challenging dataset or a fresh AI product idea — let's talk.</p>
+                        <div class="contact-links">
+                            <a href="mailto:anitkumarmaity1@gmail.com" class="contact-item">
+                                <span class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                        aria-hidden="true">
+                                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                                        <path d="m4 7 8 6 8-6" />
+                                    </svg>
+                                </span>
+                                <span>anitkumarmaity1@gmail.com</span>
+                            </a>
+                            <a href="tel:+918967784334" class="contact-item">
+                                <span class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+                                    </svg>
+                                </span>
+                                <span>+91 89677 84334</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank"
+                                rel="noopener" class="contact-item">
+                                <span class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.5 4.78 5.76V21H18v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z" />
+                                    </svg>
+                                </span>
+                                <span>linkedin.com/in/anit-kumar-maity</span>
+                            </a>
+                            <a href="https://github.com/anitkumarmaity1-hash" target="_blank" rel="noopener"
+                                class="contact-item">
+                                <span class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                                    </svg>
+                                </span>
+                                <span>github.com/anitkumarmaity1-hash</span>
+                            </a>
+                            <div class="contact-item">
+                                <span class="ci-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                                        aria-hidden="true">
+                                        <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" />
+                                        <circle cx="12" cy="9" r="2.5" />
+                                    </svg>
+                                </span>
+                                <span>Tamluk, Purba Medinipur, West Bengal, 721636, India</span>
+                            </div>
                         </div>
                     </div>
+                    <form class="contact-form reveal-up" id="contact-form" novalidate>
+                        <div class="form-group">
+                            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" />
+                            <label for="cf-name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="cf-email" name="email" placeholder=" " required
+                                autocomplete="email" />
+                            <label for="cf-email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="cf-subject" name="subject" placeholder=" " />
+                            <label for="cf-subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="cf-message">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <span id="btn-text">Send Message</span>
+                        </button>
+                        <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+                    </form>
                 </div>
-                <form class="contact-form reveal-up" id="contact-form" style="--delay:0.15s" novalidate>
-                    <div class="form-group floating">
-                        <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" />
-                        <label for="cf-name">Name</label>
-                    </div>
-                    <div class="form-group floating">
-                        <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email" />
-                        <label for="cf-email">Email</label>
-                    </div>
-                    <div class="form-group floating">
-                        <input type="text" id="cf-subject" name="subject" placeholder=" " />
-                        <label for="cf-subject">Subject</label>
-                    </div>
-                    <div class="form-group floating">
-                        <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
-                        <label for="cf-message">Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
-                        <span id="btn-text">Send Message</span>
-                        <span class="btn-arrow">→</span>
-                    </button>
-                    <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- ▓▓▓ FOOTER ▓▓▓ -->
     <footer class="footer">
         <div class="footer-inner">
-            <span class="footer-logo"><span class="logo-bracket">[</span>AKM<span class="logo-bracket">]</span></span>
-            <p class="footer-copy">Designed &amp; built by Anit Kumar Maity · 2026</p>
+            <span class="footer-copy">Designed &amp; built by Anit Kumar Maity · 2026</span>
             <div class="footer-links">
-                <a href="https://github.com/anitkumarmaity1-hash" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/anitkumarmaity1-hash" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/anit-kumar-maity-41308734a/" target="_blank"
+                    rel="noopener">LinkedIn</a>
                 <a href="mailto:anitkumarmaity1@gmail.com">Email</a>
             </div>
         </div>
     </footer>
 
-    <!-- ▓▓▓ BACK TO TOP ▓▓▓ -->
     <button id="back-to-top" aria-label="Back to top">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"

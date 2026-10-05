@@ -25,3 +25,6 @@ Thumbs.db
 # Logs
 *.log
 uvicorn.log
+
+# Contact form submissions (local data, not for version control)
+data/
