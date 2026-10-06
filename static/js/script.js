@@ -60,6 +60,101 @@ if (backBtn) {
     backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 }
 
+/* Theme toggle (saved in localStorage) */
+(function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (_) { /* storage blocked */ }
+    });
+})();
+
+/* Scroll progress bar */
+(function () {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    const update = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+})();
+
+/* Rotating hero focus line */
+(function () {
+    const el = document.getElementById('rotator');
+    if (!el || reduceMotion) return;
+    const words = ['Generative AI apps', 'RAG pipelines', 'Computer Vision models', 'NLP & speech systems'];
+    let i = 0;
+    setInterval(() => {
+        el.classList.add('fade');
+        setTimeout(() => {
+            i = (i + 1) % words.length;
+            el.textContent = words[i];
+            el.classList.remove('fade');
+        }, 250);
+    }, 2600);
+})();
+
+/* Copy email */
+(function () {
+    const btn = document.getElementById('copy-email');
+    if (!btn) return;
+    const email = btn.dataset.email;
+    btn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(email);
+            btn.textContent = 'Copied ✓';
+            btn.classList.add('copied');
+        } catch (_) {
+            window.location.href = `mailto:${email}`;
+            return;
+        }
+        setTimeout(() => { btn.textContent = 'Copy email'; btn.classList.remove('copied'); }, 1800);
+    });
+})();
+
+/* Project filter chips */
+(function () {
+    const chips = document.querySelectorAll('#proj-filter .chip');
+    const cards = document.querySelectorAll('.project-card');
+    chips.forEach(chip => chip.addEventListener('click', () => {
+        const f = chip.dataset.filter;
+        chips.forEach(c => c.classList.toggle('active', c === chip));
+        cards.forEach(card => {
+            const show = f === 'all' || (card.dataset.cat || '').split(' ').includes(f);
+            card.hidden = !show;
+            if (show) card.classList.add('visible');
+        });
+    }));
+})();
+
+/* Project cards: keep the first paragraph, expand the rest on demand */
+(function () {
+    document.querySelectorAll('.project-card').forEach(card => {
+        const descs = card.querySelectorAll('.proj-desc');
+        if (descs.length < 2) return;
+        const extra = Array.from(descs).slice(1);
+        extra.forEach(d => d.classList.add('is-collapsed'));
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'proj-more';
+        btn.textContent = 'Show details';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', () => {
+            const open = btn.getAttribute('aria-expanded') !== 'true';
+            extra.forEach(d => d.classList.toggle('is-collapsed', !open));
+            btn.textContent = open ? 'Show less' : 'Show details';
+            btn.setAttribute('aria-expanded', open);
+        });
+        descs[0].after(btn);
+    });
+})();
+
 /* Contact form -> FastAPI /api/contact */
 (function () {
     const form = document.getElementById('contact-form');
