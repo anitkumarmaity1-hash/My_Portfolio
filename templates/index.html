@@ -137,7 +137,7 @@
                                 <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" />
                                 <circle cx="12" cy="9" r="2.5" />
                             </svg>
-                            Tamluk, Purba Medinipur, West Bengal, India
+                            Bengalore, Karnataka, India
                         </span>
                     </div>
                 </div>
@@ -166,6 +166,10 @@
                                 feature sets; a deployed CNN reached 97% accuracy.</li>
                             <li><strong>RBAC medical RAG</strong> over 9 textbooks and 88K+ chunks, combining
                                 PubMedBERT dense retrieval, BM25 and reranking.</li>
+                            <li><strong>Industrial Intelligence Agent</strong>, a multi-tenant anomaly-detection
+                                platform with
+                                Postgres row-level security and a LangGraph agent whose risk scores are computed
+                                deterministically — the LLM only explains the evidence.</li>
                             <li><strong>VideoMind</strong>, a multimodal Video RAG system that fuses ASR transcripts
                                 with visual retrieval to answer questions with timestamp-grounded evidence.</li>
                         </ul>
@@ -179,9 +183,6 @@
                     <div class="about-card reveal-up">
                         <h3>Currently building</h3>
                         <ul class="about-card-list">
-                            <li>An agentic AI operations copilot (LangGraph + FastAPI) that investigates
-                                factory-machine anomalies using PySpark-derived health metrics and a Pinecone /
-                                Vertex AI RAG pipeline — about 90% complete.</li>
                             <li>A deterministic, risk-controlled options algo-trading system on the Groww API for
                                 NIFTY / BANKNIFTY, with a centralised risk engine and broker-side OCO exits — about
                                 40% complete.</li>
@@ -221,7 +222,7 @@
             <div class="container">
                 <div class="section-header reveal-up">
                     <h2 class="section-title">Projects &amp; research</h2>
-                    <p class="section-sub">Eight projects — from a published accent classifier to three end-to-end
+                    <p class="section-sub">Eight projects — from a published accent classifier to two end-to-end
                         systems currently in progress.</p>
                 </div>
                 <div class="proj-filter reveal-up" id="proj-filter" role="group" aria-label="Filter projects">
@@ -565,54 +566,60 @@
                         </div>
                     </article>
 
-                    <!-- PROJECT 6: Industrial Intelligence Agent (In Progress) -->
-                    <article class="project-card reveal-up" data-cat="genai progress">
+                    <!-- PROJECT 6: Industrial Intelligence Agent -->
+                    <article class="project-card reveal-up" data-cat="genai data">
                         <div class="proj-head">
-                            <span class="proj-period mono">Sep 2026 – Present</span>
-                            <span class="proj-badge proj-badge-progress">In progress · 90%</span>
+                            <span class="proj-period mono">Sep 2026 – Oct 2026</span>
+                            <span class="proj-badge">MCA final project · Multi-tenant</span>
                         </div>
                         <div class="proj-title-row">
-                            <h3 class="proj-title">Industrial Intelligence Agent — AI Operations Copilot</h3>
+                            <h3 class="proj-title">Industrial Intelligence Agent — Anomaly Detection &amp; Maintenance
+                                Copilot</h3>
+                            <a href="/static/docs/iia_technical_case_study.pdf" target="_blank" rel="noopener"
+                                class="proj-doc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    aria-hidden="true">
+                                    <path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+                                    <path d="M14 3v4h4" />
+                                </svg>
+                                Technical case study
+                            </a>
                         </div>
-                        <p class="proj-org">Personal project</p>
-                        <div class="proj-progress-wrap">
-                            <div class="proj-progress-bar-wrap">
-                                <div class="proj-progress-bar" style="--w:90%"></div>
-                            </div>
-                            <span class="proj-progress-label mono">90%</span>
-                        </div>
-                        <p class="proj-desc">Building an agentic decision-support system that investigates abnormal
-                            factory-machine behaviour and produces evidence-backed maintenance recommendations,
-                            instead of a chatbot that free-generates answers. A LangGraph agent plans which evidence a
-                            query needs and pulls it from three independent sources — PySpark-derived machine health
-                            metrics, historical PostgreSQL records, and a maintenance-document knowledge base —
-                            before Gemini (via Vertex AI) synthesises a root-cause analysis with explicit citations.
+                        <p class="proj-org">MCA project — Pondicherry University</p>
+                        <p class="proj-desc">Built a multi-tenant decision-support platform that ingests machine sensor
+                            data, detects anomalies with PySpark, ranks machines by health risk and answers questions
+                            like “why is M-04 underperforming?” with an evidence-backed investigation. A FastAPI
+                            service and a Streamlit dashboard sit on PostgreSQL 16, where
+                            <strong>row-level security isolates tenants</strong> for two least-privilege database
+                            roles; a PostgreSQL-queue worker validates unit-mapped CSV uploads, loads them
+                            idempotently and runs rolling z-score and range-rule detection, fed also by a scheduled
+                            GCS pull connector.
                         </p>
-                        <p class="proj-desc">The RAG layer ships two retrieval backends behind one contract — a
-                            Pinecone + Vertex AI dense retriever for production, and a dependency-free BM25 lexical
-                            retriever that the system automatically degrades to if cloud credentials or connectivity
-                            are unavailable — so the agent never goes fully silent. Risk scoring, anomaly thresholds
-                            and all numeric evidence are computed deterministically in code; the LLM is only allowed
-                            to interpret and explain evidence it was actually given, never invent it.</p>
+                        <p class="proj-desc">The LangGraph agent keeps facts and language apart: sensor and anomaly
+                            evidence, risk level, root-cause candidates and fleet ranking are computed
+                            deterministically, and an optional Gemini planner may only choose whether to pull
+                            maintenance history and search a 62-chunk knowledge base (BM25, or Vertex AI embeddings
+                            with Pinecone). An optional Gemini synthesis step is rejected if its prose contains a
+                            number absent from the evidence. A sustained-anomaly-rate rule replaced an earlier risk
+                            rule that rated all 18 machines MEDIUM. Demonstrated on synthetic and public (UCI AI4I)
+                            data — not deployed at a real factory.</p>
                         <div class="proj-metrics">
-                            <div class="metric"><span class="metric-val">10</span><span class="metric-key">Build
-                                    phases completed</span></div>
-                            <div class="metric"><span class="metric-val">53</span><span class="metric-key">RAG layer
-                                    tests passing</span></div>
-                            <div class="metric"><span class="metric-val">62</span><span
-                                    class="metric-key">Knowledge-base
-                                    chunks indexed</span></div>
-                            <div class="metric"><span class="metric-val">2</span><span class="metric-key">Retrieval
-                                    backends (dense + BM25)</span></div>
+                            <div class="metric"><span class="metric-val">430</span><span class="metric-key">Test
+                                    functions
+                                    across 34 modules</span></div>
+                            <div class="metric"><span class="metric-val">3-layer</span><span class="metric-key">Tenant
+                                    isolation incl. Postgres RLS</span></div>
+                            <div class="metric"><span class="metric-val">10</span><span class="metric-key">Alembic
+                                    migrations</span></div>
+                            <div class="metric"><span class="metric-val">0.95</span><span class="metric-key">MRR on a
+                                    10-case BM25 eval</span></div>
                         </div>
                         <div class="proj-tags">
-                            <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span>
-                            <span>PySpark</span><span>PostgreSQL</span><span>Pinecone</span><span>Vertex AI ·
-                                Gemini</span>
-                            <span>BM25</span><span>Streamlit</span><span>Docker</span>
+                            <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>PySpark</span>
+                            <span>PostgreSQL 16 · RLS</span><span>Alembic</span><span>Gemini · Vertex AI</span>
+                            <span>Pinecone</span><span>BM25</span><span>Streamlit</span><span>Docker Compose</span>
+                            <span>GitHub Actions CI</span>
                         </div>
-                        <p class="proj-wip-note">90% complete — source, live demo and documentation will be added
-                            once the project is finished.</p>
                     </article>
 
                     <!-- PROJECT 7: Options Algo-Trading Bot (In Progress) -->
@@ -1021,7 +1028,7 @@
                                         <circle cx="12" cy="9" r="2.5" />
                                     </svg>
                                 </span>
-                                <span>Tamluk, Purba Medinipur, West Bengal, 721636, India</span>
+                                <span>Bengaluru, Karnataka, India</span>
                             </div>
                         </div>
                     </div>
